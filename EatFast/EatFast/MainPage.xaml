@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="EatFast.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EatFast"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Name="mainMenuGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="Design/main_background.jpg" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="Red">
+            <TextBlock Text="Eat Fast" />
+        </Grid>
+
+        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="1" Grid.Row="1" Background="Yellow">
+            <TextBlock Text="Locations" />
+        </Grid>
+
+        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="3" Grid.Row="1" Background="Blue">
+            <TextBlock Text="Favourites" />
+        </Grid>
+
+        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="1" Grid.Row="3" Background="Green">
+            <TextBlock Text="Previous" />
+        </Grid>
+
+        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="3" Grid.Row="3" Background="Purple">
+            <TextBlock Text="Exit" />
+        </Grid>
+    </Grid>
+</Page>
