@@ -6,6 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <SlideNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
 
     <Grid Name="mainMenuGrid">
         <Grid.Background>
@@ -29,23 +38,29 @@
 
 
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="Red">
-            <TextBlock Text="Eat Fast" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="9*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Menu" Grid.Row="0" />
+            <TextBlock Text="Eat Fast" Grid.Column="1"/>
         </Grid>
 
         <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="1" Grid.Row="1" Background="Yellow">
-            <TextBlock Text="Locations" />
+            <Button Content="Locations" Click="NavigateToPage" />
         </Grid>
 
         <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="3" Grid.Row="1" Background="Blue">
-            <TextBlock Text="Favourites" />
+            <Button Content="Favourites" />
         </Grid>
 
         <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="1" Grid.Row="3" Background="Green">
-            <TextBlock Text="Previous" />
+            <Button Content="Previous" />
         </Grid>
 
         <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="3" Grid.Row="3" Background="Purple">
-            <TextBlock Text="Exit" />
+            <Button Content="Exit" />
         </Grid>
     </Grid>
 </Page>

@@ -29,5 +29,10 @@ namespace EatFast
             var mainMenuViewModel = new MainMenuViewModel { mainMenuGridMargin = "10, 10, 0, 0" };
             this.mainMenuGrid.DataContext = mainMenuViewModel;
         }
+
+        public void NavigateToPage(object sender, RoutedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(LocationsPage));
+        }
     }
 }
