@@ -34,5 +34,9 @@ namespace EatFast
         {
             this.Frame.Navigate(typeof(LocationsPage));
         }
+        public void NavigateToMenuPage(object sender, RoutedEventArgs args)
+        {
+            this.Frame.Navigate(typeof(FoodMenuPage));
+        }
     }
 }
