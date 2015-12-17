@@ -18,49 +18,93 @@
 
     <Grid Name="mainMenuGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Design/main_background.jpg" />
+            <ImageBrush ImageSource="Design/download.jpg" />
         </Grid.Background>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="10" />
-        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Eat Fast" TextAlignment="Center" FontSize="38" FontStyle="Oblique" Foreground="DarkCyan" FontWeight="ExtraBlack"/>
 
 
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="Red">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="9*" />
-            </Grid.ColumnDefinitions>
+        <ListView Grid.Row="1" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <StackPanel>
+                <Button Content="Menu" HorizontalAlignment="Center">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0"/>
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkCyan" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
 
-            <Button Content="Menu" Grid.Row="0" />
-            <TextBlock Text="Eat Fast" Grid.Column="1"/>
-        </Grid>
 
-        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="1" Grid.Row="1" Background="Yellow">
-            <Button Content="Locations" Click="NavigateToPage" />
-        </Grid>
 
-        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="3" Grid.Row="1" Background="Blue">
-            <Button Content="Favourites" />
-        </Grid>
-
-        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="1" Grid.Row="3" Background="Green">
-            <Button Content="Previous" />
-        </Grid>
-
-        <Grid Margin="{Binding mainMenuGridMargin}" Grid.Column="3" Grid.Row="3" Background="Purple">
-            <Button Content="Exit" />
-        </Grid>
+                <Button Content="Farvourites">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0"/>
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkCyan" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                
+                <Button Content="Locations" Click="NavigateToPage" >
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0"/>
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkCyan" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                
+                <Button Content="FeedBack">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0"/>
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkCyan" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                
+                <!--WITH the deliveri Man :D-->
+                <Button Content="Selfies">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0"/>
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkCyan" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                
+                <Button Content="Previous" >
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0"/>
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkCyan" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                
+                <Button Content="Exit" >
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0"/>
+                            <GradientStop Color="LightBlue" Offset="0.5"/>
+                            <GradientStop Color="DarkCyan" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                
+            </StackPanel>
+        </ListView>
     </Grid>
 </Page>

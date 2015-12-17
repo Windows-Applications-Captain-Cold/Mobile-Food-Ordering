@@ -98,6 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DelegateCommand.cs" />
     <Compile Include="LocationsPage.xaml.cs">
       <DependentUpon>LocationsPage.xaml</DependentUpon>
     </Compile>
@@ -119,6 +120,7 @@
     <None Include="EatFast_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Design\download.jpg" />
     <Content Include="Design\main_background.jpg" />
     <Content Include="Design\meal.jpg" />
     <Content Include="Properties\Default.rd.xml" />

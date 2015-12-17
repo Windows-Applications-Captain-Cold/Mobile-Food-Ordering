@@ -5,4 +5,13 @@
     xmlns:local="using:EatFast"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <Style TargetType="Button" x:Key="DefaultTextBoxStyles">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource DefaultTextBoxStyles}"/>
+    </Application.Resources>
 </Application>
