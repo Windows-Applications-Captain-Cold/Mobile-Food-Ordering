@@ -1,43 +1,7 @@
 var Location = require('./models/Location.js');
+var Food = require('./models/Food.js');
 
 module.exports = function () {
-    /*function createCategory(category) {
-        return new Promise(function (reject, resolve) {
-            if (!category.Name) {
-                reject(new Error("Missing category name!"));
-            }
-
-            var category = new ArticleCategory({
-                name: category.name,
-                 articlesCount: 0
-            });
-
-            category.save(function (error) {
-                if (error) {
-                    reject(error);
-                }
-            });
-
-            resolve("Category created!"); //TODO: Provide better way
-        });
-    }
-
-    function getArticleById(id) {
-        return new Promise(function (resolve, reject) {
-            Article.findOne({_id: id}, function (error, article) {
-                if (error) {
-                    reject(error);
-                }
-
-                if (!article) {
-                    console.error('Couldn\'t find any article with id: ' + id);
-                }
-
-                resolve(article);
-            });
-        });
-    }*/
-
     function getAllLocations() {
         return new Promise(function (resolve, reject) {
             Location.find({}, function (error, locations) {
@@ -89,11 +53,68 @@ module.exports = function () {
         });
     }
 
+    function getFoods(type) {
+        return new Promise(function (resolve, reject) {
+            Food.find({Type: type}, function (error, foods) {
+                if (error) {
+                    reject(error);
+                }
+
+                if (!foods) {
+                    console.error("There are no locations!...");
+                }
+
+                resolve(foods);
+            });
+        });
+    }
+
+    function addFood(foodData) {
+        return new Promise(function (resolve, reject) {
+            food = new Food({
+                Name: foodData.Name,
+                Price: foodData.Price,
+                Type: foodData.Type,
+                Description: foodData.Description,
+                ImgSource: foodData.ImgSource
+            });
+
+            food.save(function (error) {
+                if (error) {
+                    reject(error);
+                }
+            });
+
+            resolve(food);
+        });
+    }
+
+    function getAllFoods() {
+        return new Promise(function (resolve, reject) {
+            Food.find({}, function (error, foods) {
+                if (error) {
+                    reject(error);
+                }
+
+                if (!foods) {
+                    console.error("There are no locations!...");
+                }
+
+                resolve(foods);
+            });
+        });
+    }
+
     return {
         locations: {
             all: getAllLocations,
             getById: getLocationById,
             save: saveLocation
+        },
+        foods : {
+            get: getFoods,
+            add: addFood,
+            all: getAllFoods
         }
     }
 };
