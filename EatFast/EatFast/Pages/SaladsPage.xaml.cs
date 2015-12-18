@@ -1,5 +1,4 @@
-﻿using EatFast.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,31 +13,19 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace EatFast
+namespace EatFast.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class SaladsPage : Page
     {
-        public MainPage()
+        public SaladsPage()
         {
             this.InitializeComponent();
-            var mainMenuViewModel = new MainMenuViewModel { mainMenuGridMargin = "10, 10, 0, 0" };
-            this.mainMenuGrid.DataContext = mainMenuViewModel;
         }
-
-        public void NavigateToPage(object sender, RoutedEventArgs args)
-        {
-            this.Frame.Navigate(typeof(LocationsPage));
-        }
-        public void NavigateToMenuPage(object sender, RoutedEventArgs args)
-        {
-            this.Frame.Navigate(typeof (FoodMenuPage));
-        }
-
         public void GoBack(object sender, RoutedEventArgs args)
         {
             if (this.Frame.CanGoBack)

@@ -98,15 +98,43 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FoodMenuPage.xaml.cs">
+    <Compile Include="Model\Food.cs" />
+    <Compile Include="Pages\AppetizersPage.xaml.cs">
+      <DependentUpon>AppetizersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DesertsPage.xaml.cs">
+      <DependentUpon>DesertsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FoodMenuPage.xaml.cs">
       <DependentUpon>FoodMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DelegateCommand.cs" />
-    <Compile Include="LocationsPage.xaml.cs">
+    <Compile Include="Pages\LocationsPage.xaml.cs">
       <DependentUpon>LocationsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainCoursePage.xaml.cs">
+      <DependentUpon>MainCoursePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PastaPage.xaml.cs">
+      <DependentUpon>PastaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PizzaPage.xaml.cs">
+      <DependentUpon>PizzaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SaladsPage.xaml.cs">
+      <DependentUpon>SaladsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Soft DrinksPage.xaml.cs">
+      <DependentUpon>Soft DrinksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SoupsPage.xaml.cs">
+      <DependentUpon>SoupsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WinesPage.xaml.cs">
+      <DependentUpon>WinesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -142,17 +170,53 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="FoodMenuPage.xaml">
+    <Page Include="Pages\AppetizersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LocationsPage.xaml">
+    <Page Include="Pages\DesertsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FoodMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LocationsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MainCoursePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PastaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PizzaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SaladsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Soft DrinksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SoupsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WinesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsPage.xaml">
       <SubType>Designer</SubType>

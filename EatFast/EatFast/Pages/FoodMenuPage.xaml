@@ -9,7 +9,7 @@
 
     <Grid Name="mainMenuGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Design/images (3).jpg"/>
+            <ImageBrush ImageSource="/Design/images (3).jpg"/>
         </Grid.Background>
 
         <Grid.RowDefinitions>
@@ -22,23 +22,24 @@
         <ListView Grid.Row="1" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <StackPanel>
                 <Button Content="Main Courses"
-                        HorizontalAlignment="Center"/>
+                        HorizontalAlignment="Center"
+                        Click="GotoMainCourse"/>
 
-                <Button Content="Appetizers"/>
+                <Button Content="Appetizers" Click="GotoAppetizers"/>
 
-                <Button Content="Pizza"/>
+                <Button Content="Pizza" Click="GotoPizza"/>
 
-                <Button Content="Pasta"/>
+                <Button Content="Pasta" Click="GotoPasta"/>
 
-                <Button Content="Salads"/>
+                <Button Content="Salads" Click="GotoSalads"/>
 
-                <Button Content="Soups"/>
+                <Button Content="Soups" Click="GotoSoups"/>
 
-                <Button Content="Deserts"/>
+                <Button Content="Deserts" Click="GotoDeserts"/>
 
-                <Button Content="Wines"/>
+                <Button Content="Wines" Click="GotoWines"/>
 
-                <Button Content="Soft Drinks"/>
+                <Button Content="Soft Drinks" Click="GotoSoft_Drinks"/>
             </StackPanel>
         </ListView>
     </Grid>
