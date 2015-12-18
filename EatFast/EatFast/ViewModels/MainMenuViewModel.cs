@@ -1,4 +1,4 @@
-﻿namespace EatFast.ViewModels
+﻿namespace Teamer.ViewModels
 {
     public class MainMenuViewModel : IContentViewModel
     {

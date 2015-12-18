@@ -1,11 +1,11 @@
-﻿using EatFast.ViewModels;
+﻿using Teamer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EatFast
+namespace Teamer
 {
     public sealed partial class SettingsPage
     {

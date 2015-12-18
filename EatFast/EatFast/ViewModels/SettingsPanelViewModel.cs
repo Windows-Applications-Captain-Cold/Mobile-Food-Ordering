@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EatFast.ViewModels
+namespace Teamer.ViewModels
 {
     public class SettingsPanelViewModel
     {
