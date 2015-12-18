@@ -7,8 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-
-
     <Grid Name="mainMenuGrid">
         <Grid.Background>
             <ImageBrush ImageSource="Design/images (3).jpg"/>
@@ -21,108 +19,32 @@
 
         <TextBlock Text="MENU" TextAlignment="Center" FontSize="38" FontStyle="Oblique" Foreground="DarkCyan" FontWeight="ExtraBlack"/>
 
-
         <ListView Grid.Row="1" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <StackPanel>
                 <Button Content="Main Courses"
-                        HorizontalAlignment="Center">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                        HorizontalAlignment="Center"/>
 
-                <Button Content="Appetizers">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Appetizers"/>
 
-                <Button Content="Pizza" >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Pizza"/>
 
-                <Button Content="Pasta">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Pasta"/>
 
-                <Button Content="Salads">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button Content="Soups">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Salads"/>
 
-                <Button Content="Deserts" >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Soups"/>
 
-                <Button Content="Wines" >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Deserts"/>
 
-                <Button Content="Soft Drinks" >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Wines"/>
 
+                <Button Content="Soft Drinks"/>
             </StackPanel>
-
         </ListView>
     </Grid>
     <Page.BottomAppBar>
         <AppBar>
-            <AppBarButton Label="Back" Icon="Back" Click="GoBack">
-               
-            </AppBarButton>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
         </AppBar>
     </Page.BottomAppBar>
 </Page>

@@ -31,79 +31,19 @@
 
         <ListView Grid.Row="1" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <StackPanel>
-                <Button Content="Menu"
-                        HorizontalAlignment="Center"
-                        Click="NavigateToMenuPage">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-               
-                <Button Content="Farvourites">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Menu" Click="NavigateToMenuPage"/>
                 
-                <Button Content="Locations" Click="NavigateToPage" >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                <Button Content="Farvourites"/>
                 
-                <Button Content="FeedBack">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                
-                <!--WITH the deliveri Man :D-->
-                <Button Content="Selfies">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                
-                <Button Content="Previous" >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                
-                <Button Content="Exit" >
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Color="DarkCyan" Offset="0.0"/>
-                            <GradientStop Color="LightBlue" Offset="0.5"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                
+                <Button Content="Locations" Click="NavigateToPage" />
+
+                <Button Content="FeedBack"/>
+
+                <Button Content="Selfies"/>
+
+                <Button Content="Previous"/>
+
+                <Button Content="Exit"/>
             </StackPanel>
         </ListView>
     </Grid>
