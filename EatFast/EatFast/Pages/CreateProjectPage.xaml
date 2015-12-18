@@ -7,6 +7,27 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
+    <Page.Resources>
+        <DataTemplate x:Name="testTemplate">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                          <!--Binding-->
+                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
+                        <Button Style="{StaticResource Cool}" Grid.Column="1" Content="Accept"/>
+                        <Button Style="{StaticResource Cool}" Grid.Column="2" Content="Reject"/>
+
+                    </Grid>
+
+        </DataTemplate>
+    </Page.Resources>
+
+    
     <Grid Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="58*"/>
@@ -22,7 +43,7 @@
             <RowDefinition Height="58*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Create Project"
+        <TextBlock Text="Create Organization"
                    Grid.Row="0"
                    FontSize="30"  />
         <TextBlock Text="Project Name"
@@ -35,154 +56,32 @@
               VerticalAlignment="Center" 
                  TextAlignment="Left"/>
 
-        <TextBlock Text="Join Project"
+        <TextBlock Text="Join Organizations"
                    Grid.Row="5"
                    FontSize="30" VerticalAlignment="Bottom" />
-        <Button Content="Create" Grid.Row="4" Height="30" Margin="105,26.667,105,25.333"/>
+        <Button Style="{StaticResource Cool}" 
+            Content="Create" 
+            Grid.Row="4" 
+            Height="30"/>
 
         <TextBlock Text="Choose Project"
                    Grid.Row="6"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom" />
 
-        <ListView Grid.Row="7"
+        <ListView ItemTemplate="{StaticResource testTemplate}"
+                  Grid.Row="7"
                   Grid.RowSpan="3"
-                 HorizontalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
                   ScrollViewer.VerticalScrollBarVisibility="Hidden"
                   BorderBrush="Gray"
                   BorderThickness="2">
-            <ListView.Items>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-                <ListViewItem >
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                        <Button Grid.Column="1" Content="Accept"/>
-                        <Button Grid.Column="2" Content="Reject"/>
-
-                    </Grid>
-
-                </ListViewItem>
-            </ListView.Items>
+            <Grid>
+                
+            </Grid>
 
         </ListView>
-        <Button Content="Join" Grid.Row="10" Height="30" Margin="105,14.333,105,14"/>
+       
+        <Button Style="{StaticResource Cool}" Content="Join" Grid.Row="10" Height="30"/>
     </Grid>
 </Page>

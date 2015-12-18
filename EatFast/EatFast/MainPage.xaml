@@ -7,6 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+   
+
+
 
     <Grid Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
@@ -43,15 +46,17 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button  Foreground="Black"
+            <Button  Style="{StaticResource Cool}"
+                     Foreground="Black"
                      Content="Log in"
-                Grid.Row="0"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"  Width="Auto"/>
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"  Width="Auto"/>
             <TextBlock Text="OR"
                        Grid.Row="1"/>
-            <Button Grid.Row="2" Foreground="Black"
-                     Content="Sign in"
+            <Button Style="{StaticResource Cool}"
+                    Grid.Row="2" 
+                    Foreground="Black"
+                    Content="Sign in"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"  Width="Auto"/>
         </Grid>

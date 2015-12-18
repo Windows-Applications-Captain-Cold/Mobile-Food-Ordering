@@ -29,6 +29,8 @@ namespace Teamer
             var mainMenuViewModel = new MainMenuViewModel { mainMenuGridMargin = "10, 10, 0, 0" };
         }
 
+       
+
         //public void NavigateToPage(object sender, RoutedEventArgs args)
         //{
         //    this.Frame.Navigate(typeof(LocationsPage));
