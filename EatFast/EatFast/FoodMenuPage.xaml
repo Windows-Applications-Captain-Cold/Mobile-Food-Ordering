@@ -7,15 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Page.Transitions>
-        <TransitionCollection>
-            <NavigationThemeTransition>
-                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
-                    <SlideNavigationTransitionInfo/>
-                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
-            </NavigationThemeTransition>
-        </TransitionCollection>
-    </Page.Transitions>
+
 
     <Grid Name="mainMenuGrid">
         <Grid.Background>
@@ -111,7 +103,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                
+
                 <Button Content="Soft Drinks" >
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -123,6 +115,14 @@
                 </Button>
 
             </StackPanel>
+
         </ListView>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack">
+               
+            </AppBarButton>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

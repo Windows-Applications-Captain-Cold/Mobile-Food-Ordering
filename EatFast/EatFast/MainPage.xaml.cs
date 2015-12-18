@@ -38,5 +38,13 @@ namespace EatFast
         {
             this.Frame.Navigate(typeof(FoodMenuPage));
         }
+
+        public void GoBack(object sender, RoutedEventArgs args)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+        }
     }
 }

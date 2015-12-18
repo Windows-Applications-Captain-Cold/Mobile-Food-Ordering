@@ -26,5 +26,13 @@ namespace EatFast
         {
             this.InitializeComponent();
         }
+
+        public void GoBack(object sender, RoutedEventArgs args)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+        }
     }
 }
