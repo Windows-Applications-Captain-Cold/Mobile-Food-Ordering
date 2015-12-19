@@ -4,7 +4,7 @@ namespace Teamer.ViewModels
 {
     public class PageViewModel : IPageViewModel
     {
-        public IPageViewModel ContentViewModel
+        public IContentViewModel ContentViewModel
         {
             get
             {
@@ -13,7 +13,7 @@ namespace Teamer.ViewModels
 
             set
             {
-                throw new NotImplementedException();
+                this.ContentViewModel = value;
             }
         }
 
@@ -23,12 +23,12 @@ namespace Teamer.ViewModels
         {
             get
             {
-                throw new NotImplementedException();
+                return this.Title;
             }
 
             set
             {
-                throw new NotImplementedException();
+                this.Title = value;
             }
         }
     }
