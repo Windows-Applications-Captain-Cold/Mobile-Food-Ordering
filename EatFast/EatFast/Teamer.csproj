@@ -108,19 +108,22 @@
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAuthenticateModel.cs" />
+    <Compile Include="Pages\CreateMainProjectPage.xaml.cs">
+      <DependentUpon>CreateMainProjectPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Pages\AccountPage.xaml.cs">
       <DependentUpon>AccountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CreateProjectPage.xaml.cs">
-      <DependentUpon>CreateProjectPage.xaml</DependentUpon>
+    <Compile Include="Pages\CreateOrganizationPage.xaml.cs">
+      <DependentUpon>CreateOrganizationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CurrentTask.xaml.cs">
       <DependentUpon>CurrentTask.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\LiderPage.xaml.cs">
-      <DependentUpon>LiderPage.xaml</DependentUpon>
+    <Compile Include="Pages\LeaderPage.xaml.cs">
+      <DependentUpon>LeaderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LocationsPage.xaml.cs">
       <DependentUpon>LocationsPage.xaml</DependentUpon>
@@ -179,7 +182,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CreateProjectPage.xaml">
+    <Page Include="Pages\CreateMainProjectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CreateOrganizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,7 +194,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LiderPage.xaml">
+    <Page Include="Pages\LeaderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
