@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Teamer.Pages;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,10 +27,19 @@ namespace Teamer
         public MainPage()
         {
             this.InitializeComponent();
-            var mainMenuViewModel = new MainMenuViewModel { mainMenuGridMargin = "10, 10, 0, 0" };
+            this.ViewModel = new UserAuthenticateViewModel();
+            this.DataContext = this.ViewModel;
         }
 
-       
+        private async void LoginUser(object sender, RoutedEventArgs args)
+        {
+            var email = this.Email.Text;
+            var password = this.Password.Text;
+            var userContentViewModel = await this.ViewModel.Login(email, password);
+            this.Frame.Navigate(typeof(AccountPage), userContentViewModel);
+        }
+
+        public UserAuthenticateViewModel ViewModel { get; set; }
 
         //public void NavigateToPage(object sender, RoutedEventArgs args)
         //{
@@ -37,7 +47,7 @@ namespace Teamer
         //}
         //public void NavigateToMenuPage(object sender, RoutedEventArgs args)
         //{
-        //    this.Frame.Navigate(typeof (FoodMenuPage));
+        //    this.Frame.Navigate(typeof(FoodMenuPage));
         //}
 
         //public void GoBack(object sender, RoutedEventArgs args)

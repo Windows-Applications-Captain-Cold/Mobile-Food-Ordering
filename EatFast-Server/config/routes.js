@@ -1,54 +1,108 @@
 var path = require('path'),
-    express = require('express');
+    express = require('express'),
+    HTTPStatus = require('http-status'),
+    User = require('../app/models/User.js');
 
-module.exports = function (app, dbRequester) {
-    app.get("/api/locations", function (req, res) {
-        dbRequester.locations.all()
-            .then(function (locationsResult) {
-                res.send(locationsResult);
-            });
+module.exports = function (app, dbRequester, passport) {
+    app.post('/api/signup', function (req, res, next) {
+        //console.log("Registering user:");
+        //console.log(req.body);
+        passport.authenticate('local-signup', function (err, user, next) {
+            if (err) {
+                res.send(HTTPStatus.BAD_REQUEST);
+            }
+            if (!user) {
+                res.send(HTTPStatus.BAD_REQUEST);
+            }
+            else {
+                res.send(HTTPStatus.OK);
+            }
+        })(req, res, next);
     });
 
-    app.post("/api/locations", function (req, res) {
-        console.log("AASDASDASDASDASd");
-        dbRequester.locations.save(req.body)
-            .then(function (saved) {
-                if (saved) {
-                    res.send(req.body);
+    app.post('/api/login', function(req, res, next) {
+        passport.authenticate('local_login', function(err, user, info) {
+            if (err)
+            {
+                res.send(HTTPStatus.BAD_REQUEST);
+            }
+
+            /*if (!user)
+            {
+                res.send(HTTPStatus.BAD_REQUEST);
+            }*/
+        })(req, res, next);
+
+        dbRequester.users.get({Email: req.body.Email})
+            .then(function (user) {
+                if (!user) {
+                    res.send(HTTPStatus.NOT_FOUND);
                 }
-            });
 
-            res.send(req.body);
-    });
-
-    app.get('/api/locations/:id', function (req, res) {
-        dbRequester.locations.getById(req.params.id)
-            .then(function (result) {
-                res.send(result);
+                res.send(user);
             });
     });
 
-    app.get('/api/foods/:type', function(req, res) {
-        dbRequester.foods.get(req.params.type)
-            .then(function (foodsResult) {
-                res.send(foodsResult);
+    app.post('/api/users/update/:id', function(req, res) {
+        updateUserInfo(req, res);
+    });
+
+    app.get('/api/users/:id', function(req, res) {
+        dbRequester.users.getById(req.params.id)
+            .then(function (user) {
+                if (!user) {
+                    res.send(HTTPStatus.NOT_FOUND);
+                }
+
+                res.send(user);
             });
     });
 
-    app.get('/api/foods', function(req, res) {
-        dbRequester.foods.all()
-            .then(function (foodsResult) {
-                res.send(foodsResult);
+    app.get('/api/users/:username', function(req, res) {
+        dbRequester.users.get(req.params.username)
+            .then(function (users) {
+                if (!users) {
+                    res.send(HTTPStatus.NOT_FOUND);
+                }
+
+                res.send(users);
             });
     });
 
-    app.post('/api/foods/', function(req, res) {
-        console.log(req.body);
-        dbRequester.foods.add(req.body)
-            .then(function (saved) {
-                res.send(saved);
-            });
+    app.get('/api/users', function(req, res) {
+        dbRequester.users.get(req.body)
+            .then(function (users) {
+                if (!users) {
+                    res.send(HTTPStatus.NOT_FOUND);
+                }
 
-            res.send(req.body);
+                res.send(users);
+            });
+    });
+}
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+
+    res.send(HTTPStatus.BAD_REQUEST);
+}
+
+function updateUserInfo(req, res) {
+    var user = User.findOne({_id: req.params.id}, function (err, user) {
+        if (err) {
+            throw err;
+        }
+        console.log("USER:");
+        console.log(user);
+        if (!user) {
+            res.send(HTTPStatus.NOT_FOUND);
+        }
+    });
+
+    User.update({_id: req.params.id}, req.body, function (err, numAffected) {
+        console.log('Updated user: ' + req.params._id);
+        res.send(HTTPStatus.OK);
     });
 }

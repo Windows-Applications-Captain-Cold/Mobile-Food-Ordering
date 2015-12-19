@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <div id="result">
+
+        </div>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $.ajax({
+                url: 'http://127.0.0.1:3000/api/signup',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    "Email": "john2@gmail.com",
+                    "Password": "1234",
+                    "Name": "John Doe"
+                }
+            })
+            .done(function(result) {
+                $('#result').html(result);
+            })
+            .fail(function(error) {
+                $('#result').html(error);
+            });
+
+        </script>
+    </body>
+</html>

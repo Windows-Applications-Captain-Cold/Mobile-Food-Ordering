@@ -28,9 +28,9 @@
                     Grid.Column="1"
                     VerticalAlignment="Center" >
             <TextBlock Text="Username" FontSize="20" />
-            <TextBox Height="40" PlaceholderText="Enter Username"/>
+            <TextBox Name="Email"  Height="40" PlaceholderText="Enter Username"/>
             <TextBlock Text="Password" Foreground="AliceBlue" FontSize="20" />
-            <TextBox Height="40" PlaceholderText="Enter Password"/>
+            <TextBox Name="Password" Height="40" PlaceholderText="Enter Password"/>
         </StackPanel>
         <Grid Grid.Row="2"
               Grid.Column="1"
@@ -45,13 +45,14 @@
                      Foreground="Black"
                      Content="Log in"
                      HorizontalAlignment="Stretch"
-                     VerticalAlignment="Stretch"  Width="Auto"/>
+                     VerticalAlignment="Stretch"  Width="Auto"
+                     Click="LoginUser"/>
             <TextBlock Text="OR"
                        Grid.Row="1"/>
             <Button Style="{StaticResource Cool}"
                     Grid.Row="2" 
                     Foreground="Black"
-                    Content="Sign in"
+                    Content="Sign up"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"  Width="Auto"/>
         </Grid>
