@@ -32,5 +32,11 @@ namespace Teamer.Pages
             this.Frame.Navigate(typeof(TasksPage));
 
         }
+
+        private void GoToPesronsAccountPage(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PersonsAccontPage));
+
+        }
     }
 }

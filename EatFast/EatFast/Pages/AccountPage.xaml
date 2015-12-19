@@ -8,7 +8,9 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Name="tacskTemplate">
-            <Grid  BorderBrush="Gray" BorderThickness="2">
+            <Grid  BorderBrush="Gray" 
+                   BorderThickness="2"
+                   DoubleTapped="GoToCurrentTask">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*"/>
                     <ColumnDefinition Width="3 *"/>

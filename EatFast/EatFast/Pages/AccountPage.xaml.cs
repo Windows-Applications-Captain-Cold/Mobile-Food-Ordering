@@ -38,5 +38,11 @@ namespace Teamer.Pages
             get { return this.DataContext as UserContentViewModel; }
             set { this.DataContext = value; }
         }
+
+        private void GoToCurrentTask(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CurrentTask));
+
+        }
     }
 }

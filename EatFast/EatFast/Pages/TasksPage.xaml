@@ -9,8 +9,10 @@
 
     <Page.Resources>
         <DataTemplate x:Name="memberList">
-            <Grid  HorizontalAlignment="Stretch"
-                   Width="380">
+            <Grid 
+                DoubleTapped="GoToCurrentTask"
+                HorizontalAlignment="Stretch"
+                Width="380">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="6*"/>

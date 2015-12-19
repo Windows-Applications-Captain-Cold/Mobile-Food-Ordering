@@ -26,5 +26,11 @@ namespace Teamer.Pages
         {
             this.InitializeComponent();
         }
+
+        private void GoToCurrentTask(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CurrentTask));
+
+        }
     }
 }
