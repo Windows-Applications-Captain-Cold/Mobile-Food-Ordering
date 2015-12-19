@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <div id="result">
+
+        </div>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $.ajax({
+                url: 'http://127.0.0.1:3000/api/locations',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    "Name": "ALADIN",
+                    "Address": "7th str",
+                    "PhoneNumber": "01239812",
+                    "Foods": "['Burger', 'LargerBurger']"
+                }
+            })
+            .done(function(result) {
+                $('#result').html(result);
+            })
+            .fail(function(error) {
+                $('#result').html(error);
+            });
+
+        </script>
+    </body>
+</html>
