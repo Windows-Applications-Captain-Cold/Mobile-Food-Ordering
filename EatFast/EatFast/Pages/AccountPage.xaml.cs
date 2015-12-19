@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Teamer.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,7 +23,7 @@ namespace Teamer.Pages
     /// </summary>
     public sealed partial class AccountPage : Page
     {
-        public AccountPage()
+        public AccountPage(IPageViewModel viewModel)
         {
             this.InitializeComponent();
         }

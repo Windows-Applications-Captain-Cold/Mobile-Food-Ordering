@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Teamer.ViewModels
+﻿namespace Teamer.ViewModels
 {
-    public class UserContentViewModel
+    using System.Collections.Generic;
+
+    public class UserContentViewModel : IPageViewModel
     {
-        public UserContentViewModel()
-        {
-
-        }
-
         public string Name { get; set; }
 
         public string Organisation { get; set; }

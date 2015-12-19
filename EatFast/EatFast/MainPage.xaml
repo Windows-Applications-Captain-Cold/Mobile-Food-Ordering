@@ -46,8 +46,9 @@
                      Foreground="Black"
                      Content="Log in"
                      HorizontalAlignment="Stretch"
+                     Name="loginButton"
                      VerticalAlignment="Stretch"  Width="Auto"
-                     Click="LoginUser"/>
+                     Click="AuthenticateUser"/>
             <TextBlock Text="OR"
                        Grid.Row="1"/>
             <Button Style="{StaticResource Cool}"
@@ -55,7 +56,10 @@
                     Foreground="Black"
                     Content="Sign up"
                     HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"  Width="Auto"/>
+                    Name ="signUpButton"
+                    VerticalAlignment="Stretch"
+                    Click="AuthenticateUser"
+                    Width="Auto"/>
         </Grid>
     </Grid>
 

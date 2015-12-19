@@ -31,12 +31,21 @@ namespace Teamer
             this.DataContext = this.ViewModel;
         }
 
-        private async void LoginUser(object sender, RoutedEventArgs args)
+        private async void AuthenticateUser(object sender, RoutedEventArgs args)
         {
             var email = this.Email.Text;
             var password = this.Password.Text;
-            var userContentViewModel = await this.ViewModel.Login(email, password);
-            this.Frame.Navigate(typeof(AccountPage), userContentViewModel);
+            var buttonSender = sender as Button;
+            if (buttonSender.Name == "logginButton")
+            {
+                var userContentViewModel = await this.ViewModel.Login(email, password);
+                this.Frame.Navigate(typeof(AccountPage), userContentViewModel);
+            }
+            else
+            {
+                var userContentViewModel = await this.ViewModel.Register(email, password);
+                this.Frame.Navigate(typeof(AccountPage), userContentViewModel);
+            }
         }
 
         public UserAuthenticateViewModel ViewModel { get; set; }

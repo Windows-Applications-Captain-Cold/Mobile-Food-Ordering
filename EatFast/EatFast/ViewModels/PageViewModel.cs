@@ -17,8 +17,6 @@ namespace Teamer.ViewModels
             }
         }
 
-        public string mainMenuGridMargin { get; set; }
-
         public string Title
         {
             get

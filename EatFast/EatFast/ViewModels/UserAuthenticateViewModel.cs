@@ -13,11 +13,17 @@ namespace Teamer.ViewModels
 {
     public class UserAuthenticateViewModel : IContentViewModel
     {
-        private UserManager userManager;
+        private IUserManager userManager;
 
         public UserAuthenticateViewModel()
+            :this(new UserManager())
         {
-            this.userManager = new UserManager();
+            
+        }
+
+        public UserAuthenticateViewModel(IUserManager manager)
+        {
+            this.userManager = manager;
         }
 
         public async Task<UserContentViewModel> Login(string username, string password)
@@ -27,10 +33,19 @@ namespace Teamer.ViewModels
             {
                 return null;
             }
-            else
+
+            return JsonConvert.DeserializeObject<UserContentViewModel>(userResponseData);
+        }
+
+        public async Task<UserContentViewModel> Register(string username, string password)
+        {
+            var userResponseData = await this.userManager.Register(username, password);
+            if (string.IsNullOrEmpty(userResponseData))
             {
-                return JsonConvert.DeserializeObject<UserContentViewModel>(userResponseData);
+                return null;
             }
+
+            return JsonConvert.DeserializeObject<UserContentViewModel>(userResponseData);
         }
     }
 }

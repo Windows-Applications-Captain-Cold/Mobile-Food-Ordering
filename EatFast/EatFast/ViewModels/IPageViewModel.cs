@@ -1,6 +1,6 @@
 ﻿namespace Teamer.ViewModels
 {
-    interface IPageViewModel : IContentViewModel
+    public interface IPageViewModel : IContentViewModel
     {
         string Title { get; set; }
 

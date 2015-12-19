@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Threading.Tasks;
-using Teamer.Models;
-using Teamer.Repository;
-using Windows.Web.Http;
-
-namespace Teamer.Managers
+﻿namespace Teamer.Managers
 {
-    public class UserManager: IManager
+    using Newtonsoft.Json;
+    using System;
+    using System.Threading.Tasks;
+    using Teamer.Models;
+    using Windows.Web.Http;
+    using Windows.Web.Http.Headers;
+
+    public class UserManager: IUserManager
     {
         private const string LoginEndpoint = "http://eatfast.herokuapp.com/api/login";
-        private const string RegisterEndpoint = "http://eatfast.herokuapp.com/api/login";
+        private const string RegisterEndpoint = "http://eatfast.herokuapp.com/api/signup";
 
         private HttpClient httpClient;
 
@@ -21,33 +21,43 @@ namespace Teamer.Managers
 
         public async Task<string> Login(string username, string password)
         {
-            return await BasePostRequest(username, password, LoginEndpoint);
+            var response = await BaseAuthenticate(username, password, LoginEndpoint);
+            if (response.StatusCode == HttpStatusCode.Ok)
+            {
+                return response.Content.ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public async Task<string> SignUp(string username, string password)
+        public async Task<string> Register(string username, string password)
         {
-            return await BasePostRequest(username, password, RegisterEndpoint);
+            var response = await BaseAuthenticate(username, password, RegisterEndpoint);
+            if (response.StatusCode == HttpStatusCode.Ok)
+            {
+                return await Login(username, password);
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        private async Task<string> BasePostRequest(string username, string password, string endpoint)
+        private async Task<HttpResponseMessage> BaseAuthenticate(string username, string password, string endpoint)
         {
-            UserAuthenticateModel loginModel = new UserAuthenticateModel()
+            var authenticateModel = new UserAuthenticateModel()
             {
                 Email = username,
                 Password = password
             };
 
-            HttpStringContent jsonLoginData = new HttpStringContent(JsonConvert.SerializeObject(loginModel));
-            jsonLoginData.Headers.ContentType = new Windows.Web.Http.Headers.HttpMediaTypeHeaderValue("application/json");
-            var response = await this.httpClient.PostAsync(new Uri(endpoint), jsonLoginData);
-            if (response.StatusCode == HttpStatusCode.BadRequest)
-            {
-                return null;
-            }
-            else
-            {
-                return response.Content.ToString();
-            }
+            var jsonData = JsonConvert.SerializeObject(authenticateModel);
+            var jsonAuthData = new HttpStringContent(jsonData);
+            jsonAuthData.Headers.ContentType = new HttpMediaTypeHeaderValue("application/json");
+            var response = await this.httpClient.PostAsync(new Uri(endpoint), jsonAuthData);
+            return response;
         }
     }
 }
