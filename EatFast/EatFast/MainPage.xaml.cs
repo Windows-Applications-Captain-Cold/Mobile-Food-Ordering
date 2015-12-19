@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Teamer.Pages;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,7 +29,6 @@ namespace Teamer
         {
             this.InitializeComponent();
             this.ViewModel = new UserAuthenticateViewModel();
-            this.DataContext = this.ViewModel;
         }
 
         private async void AuthenticateUser(object sender, RoutedEventArgs args)
@@ -36,19 +36,23 @@ namespace Teamer
             var email = this.Email.Text;
             var password = this.Password.Text;
             var buttonSender = sender as Button;
-            if (buttonSender.Name == "logginButton")
+            if (buttonSender.Name == "loginButton")
             {
                 var userContentViewModel = await this.ViewModel.Login(email, password);
                 this.Frame.Navigate(typeof(AccountPage), userContentViewModel);
             }
             else
             {
-                var userContentViewModel = await this.ViewModel.Register(email, password);
-                this.Frame.Navigate(typeof(AccountPage), userContentViewModel);
+                var viewModel = this.ViewModel;
+                this.Frame.Navigate(typeof(AccountPage), await viewModel.Register(email, password));
             }
         }
 
-        public UserAuthenticateViewModel ViewModel { get; set; }
+        public UserAuthenticateViewModel ViewModel
+        {
+            get { return this.DataContext as UserAuthenticateViewModel; }
+            set { this.DataContext = value; }
+        }
 
         //public void NavigateToPage(object sender, RoutedEventArgs args)
         //{

@@ -111,7 +111,6 @@
     <Compile Include="Pages\CreateMainProjectPage.xaml.cs">
       <DependentUpon>CreateMainProjectPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Pages\AccountPage.xaml.cs">
       <DependentUpon>AccountPage.xaml</DependentUpon>

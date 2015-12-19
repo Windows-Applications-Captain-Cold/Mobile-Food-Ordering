@@ -28,9 +28,9 @@
                     Grid.Column="1"
                     VerticalAlignment="Center" >
             <TextBlock Text="Username" FontSize="20" />
-            <TextBox Name="Email"  Height="40" PlaceholderText="Enter Username"/>
+            <TextBox Name="Email" Text="john10@gmail.com"  Height="40" PlaceholderText="Enter Username"/>
             <TextBlock Text="Password" Foreground="AliceBlue" FontSize="20" />
-            <TextBox Name="Password" Height="40" PlaceholderText="Enter Password"/>
+            <TextBox Name="Password" Text="1234" Height="40" PlaceholderText="Enter Password"/>
         </StackPanel>
         <Grid Grid.Row="2"
               Grid.Column="1"

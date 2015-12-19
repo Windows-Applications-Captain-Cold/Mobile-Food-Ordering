@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class UserContentViewModel : IPageViewModel
+    public class UserContentViewModel
     {
         public string Name { get; set; }
 

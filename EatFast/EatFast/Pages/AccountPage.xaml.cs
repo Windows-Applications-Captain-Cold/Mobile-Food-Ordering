@@ -23,9 +23,20 @@ namespace Teamer.Pages
     /// </summary>
     public sealed partial class AccountPage : Page
     {
-        public AccountPage(IPageViewModel viewModel)
+        public AccountPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            this.ViewModel = e.Parameter as UserContentViewModel;
+        }
+
+        public UserContentViewModel ViewModel
+        {
+            get { return this.DataContext as UserContentViewModel; }
+            set { this.DataContext = value; }
         }
     }
 }
