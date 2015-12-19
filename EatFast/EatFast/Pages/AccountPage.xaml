@@ -66,13 +66,16 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
                    Text=" Gosho georgiev"/>
-        <TextBlock Grid.Row="1"
+        <Grid Grid.Row="1"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
+                   Height="23"
+                   Background="Green">
+        <TextBlock    
                    HorizontalAlignment="Left"
-            Text=" Telerik Organization"
-                   FontSize="19"
-            />
+                   Text=" Telerik Organization"
+                   FontSize="19"/>
+        </Grid>
         <Image Grid.Row="0"
                Grid.Column="2"
                Source="/Design/Untitled.png" 
