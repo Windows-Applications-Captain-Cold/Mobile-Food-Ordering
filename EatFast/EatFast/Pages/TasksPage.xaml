@@ -52,16 +52,24 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0"
+        <Grid  Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Height="23"
                    Background="Green"
                    VerticalAlignment="Bottom">
             <TextBlock    
+                Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    Text=" Telerik Organization"
                    FontSize="19"/>
+            </Grid>
         </Grid>
         <Button Grid.Row="2"
                 Grid.Column="0"
