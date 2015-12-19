@@ -22,8 +22,7 @@
         <TextBlock Text="Teamer" 
                    Grid.Row="0"
                    Grid.Column="1"
-                   FontSize="36"
-                   />
+                   FontSize="36"/>
         <StackPanel Grid.Row="1"
                     Grid.Column="1"
                     VerticalAlignment="Center" >
@@ -32,7 +31,6 @@
             <TextBlock Text="Password" Foreground="AliceBlue" FontSize="20" />
             <TextBox Height="40" PlaceholderText="Enter Password"/>
         </StackPanel>
-
         <Grid Grid.Row="2"
               Grid.Column="1"
               Grid.RowSpan="2">
@@ -57,5 +55,4 @@
                     VerticalAlignment="Stretch"  Width="Auto"/>
         </Grid>
     </Grid>
-
 </Page>
