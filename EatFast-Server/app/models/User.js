@@ -7,7 +7,7 @@ var userSchema = mongoose.Schema({
     Name: String,
     Organisation: String,
     Projects: [],
-    Team: [],
+    Team: String,
     SystemMessages: Array,
     PersonalMessages: Array
 });
@@ -17,7 +17,9 @@ userSchema.methods.generateHash = function (password) {
 }
 
 userSchema.methods.validatePassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
+    return password == this.Password;
+    //console.log("USER SERVER PASSWORD: " + this.Password);
+    //return bcrypt.compareSync(password, this.Password);
 }
 
 module.exports = mongoose.model('User', userSchema);

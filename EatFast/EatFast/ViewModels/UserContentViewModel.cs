@@ -4,17 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Teamer.Models
+namespace Teamer.ViewModels
 {
-    public class User
+    public class UserContentViewModel
     {
+        public UserContentViewModel()
+        {
+
+        }
+
         public string Name { get; set; }
 
         public string Organisation { get; set; }
 
         public string Email { get; set; }
 
-        public ICollection<Project> Projects { get; set; }
+        public ICollection<string> Projects { get; set; }
 
         public string Team { get; set; }
     }

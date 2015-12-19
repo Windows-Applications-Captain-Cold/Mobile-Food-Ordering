@@ -20,26 +20,27 @@ module.exports = function (app, dbRequester, passport) {
         })(req, res, next);
     });
 
-    app.get('/api/login', function(req, res, next) {
-        passport.authenticate('local', function(err, user, info) {
-        if (err)
-        {
-            res.send(HTTPStatus.BAD_REQUEST);
-        }
-
-        if (!user)
-        {
-            res.send(HTTPStatus.OK);
-        }
-
-        req.logIn(user, function(err) {
-            if (err) {
+    app.post('/api/login', function(req, res, next) {
+        passport.authenticate('local_login', function(err, user, info) {
+            if (err)
+            {
                 res.send(HTTPStatus.BAD_REQUEST);
             }
 
-                res.send(HTTPStatus.OK);
-            });
+            /*if (!user)
+            {
+                res.send(HTTPStatus.BAD_REQUEST);
+            }*/
         })(req, res, next);
+
+        dbRequester.users.get({Email: req.body.Email})
+            .then(function (user) {
+                if (!user) {
+                    res.send(HTTPStatus.NOT_FOUND);
+                }
+
+                res.send(user);
+            });
     });
 
     app.post('/api/users/update/:id', function(req, res) {
@@ -54,6 +55,17 @@ module.exports = function (app, dbRequester, passport) {
                 }
 
                 res.send(user);
+            });
+    });
+
+    app.get('/api/users/:username', function(req, res) {
+        dbRequester.users.get(req.params.username)
+            .then(function (users) {
+                if (!users) {
+                    res.send(HTTPStatus.NOT_FOUND);
+                }
+
+                res.send(users);
             });
     });
 

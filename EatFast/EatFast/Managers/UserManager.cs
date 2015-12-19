@@ -7,25 +7,39 @@ using Windows.Web.Http;
 
 namespace Teamer.Managers
 {
-    class UserManager: IManager
+    public class UserManager: IManager
     {
+        private const string LoginEndpoint = "http://eatfast.herokuapp.com/api/login";
+
         private HttpClient httpClient;
+
+        public UserManager()
+        {
+            this.httpClient = new HttpClient();
+        }
 
         public IRepository<User> Repository { get; set; }
 
-        public async Task<string> Login(string url)
+        public async Task<string> Login(string username, string password)
         {
-            var response = await this.httpClient.GetAsync(new Uri(url));
-            if (response.IsSuccessStatusCode)
+            UserAuthenticateModel loginModel = new UserAuthenticateModel()
             {
-                var userData = await response.Content.ReadAsStringAsync();
+                Email = username,
+                Password = password
+            };
 
-                var User = JsonConvert.DeserializeObject<User>(userData);
+            HttpStringContent jsonLoginData = new HttpStringContent(JsonConvert.SerializeObject(loginModel));
+            //jsonLoginData.Headers.Add("Content-Type", "application/json");
+            jsonLoginData.Headers.ContentType = new Windows.Web.Http.Headers.HttpMediaTypeHeaderValue("application/json");
+            var response = await this.httpClient.PostAsync(new Uri(LoginEndpoint), jsonLoginData);
+            if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                return null;
             }
-
-            
-
-            return result;
+            else
+            {
+                return response.Content.ToString();
+            }
         }
     }
 }

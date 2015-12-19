@@ -18,7 +18,7 @@
             </Setter>
         </Style>
         
-        <Style TargetType="Button" x:Key="DefaultTextBoxStyles">
+        <Style TargetType="Button" x:Key="Cool">
             <Setter Property="Margin" Value="10"/>
             <Setter Property="Width" Value="150"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -35,7 +35,7 @@
             </Setter>
         </Style>
 
-        <Style TargetType="Button" BasedOn="{StaticResource DefaultTextBoxStyles}"/>
+        
         
         <Style TargetType="TextBlock" x:Key="DefaultTextBoxStyle">
             <Setter Property="HorizontalAlignment" Value="Center"/>

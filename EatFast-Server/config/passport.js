@@ -3,7 +3,6 @@ var localStrategy = require('passport-local').Strategy,
     HTTPStatus = require('http-status');
 
 module.exports = function (passport) {
-   console.log(passport.serializeUser);
    passport.serializeUser(function (user, done) {
        done(null, user.id);
    });
@@ -34,6 +33,7 @@ module.exports = function (passport) {
                    newUser.Password = newUser.generateHash(password);
                    newUser.Name = req.body.Name;
                    newUser.Organisation = "";
+                   newUser.Team = "";
 
                    newUser.save(function (err) {
                        if (err) {
@@ -49,7 +49,7 @@ module.exports = function (passport) {
        })
    }));
 
-   passport.use('local-login', new localStrategy({
+   passport.use('local_login', new localStrategy({
        usernameField: 'Email',
        passwordField: 'Password',
        passReqToCallback: true

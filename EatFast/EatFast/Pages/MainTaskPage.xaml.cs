@@ -20,13 +20,11 @@ namespace Teamer.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CreateProjectPage : Page
+    public sealed partial class MainTaskPage : Page
     {
-        public CreateProjectPage()
+        public MainTaskPage()
         {
             this.InitializeComponent();
         }
-
-       
     }
 }

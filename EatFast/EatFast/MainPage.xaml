@@ -7,7 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-
     <Grid Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -29,9 +28,9 @@
                     Grid.Column="1"
                     VerticalAlignment="Center" >
             <TextBlock Text="Username" FontSize="20" />
-            <TextBox Height="40" PlaceholderText="Enter Username"/>
+            <TextBox Name="Email"  Height="40" PlaceholderText="Enter Username"/>
             <TextBlock Text="Password" Foreground="AliceBlue" FontSize="20" />
-            <TextBox Height="40" PlaceholderText="Enter Password"/>
+            <TextBox Name="Password" Height="40" PlaceholderText="Enter Password"/>
         </StackPanel>
 
         <Grid Grid.Row="2"
@@ -43,15 +42,18 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button  Foreground="Black"
+            <Button  Style="{StaticResource Cool}"
+                     Foreground="Black"
                      Content="Log in"
-                Grid.Row="0"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch"  Width="Auto"/>
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"  Width="Auto"
+                     Click="LoginUser"/>
             <TextBlock Text="OR"
                        Grid.Row="1"/>
-            <Button Grid.Row="2" Foreground="Black"
-                     Content="Sign in"
+            <Button Style="{StaticResource Cool}"
+                    Grid.Row="2" 
+                    Foreground="Black"
+                    Content="Sign up"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"  Width="Auto"/>
         </Grid>

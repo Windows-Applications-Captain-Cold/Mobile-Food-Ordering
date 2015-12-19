@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Superheroes.Helpers
+namespace Teamer.Helpers
 {
     public class DelegateCommand<T> : ICommand
     {

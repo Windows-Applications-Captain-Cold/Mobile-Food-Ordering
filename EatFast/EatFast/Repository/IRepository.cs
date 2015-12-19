@@ -1,10 +1,13 @@
 ﻿using System.Collections;
+using Windows.Web.Http;
 
 namespace Teamer.Repository
 {
     public interface IRepository<T>
     {
-        ICollection GetAsync();
+        HttpClient HttpClient { get; set; }
+
+        ICollection GetAsync(string url);
 
         ICollection GetByIdAsync();
 
