@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+   
     <Grid Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -22,8 +22,8 @@
         <TextBlock Text="Teamer" 
                    Grid.Row="0"
                    Grid.Column="1"
-                   FontSize="36"
-                   />
+                   FontSize="36"/>
+        
         <StackPanel Grid.Row="1"
                     Grid.Column="1"
                     VerticalAlignment="Center" >
@@ -32,7 +32,6 @@
             <TextBlock Text="Password" Foreground="AliceBlue" FontSize="20" />
             <TextBox Name="Password" Height="40" PlaceholderText="Enter Password"/>
         </StackPanel>
-
         <Grid Grid.Row="2"
               Grid.Column="1"
               Grid.RowSpan="2">
@@ -62,5 +61,4 @@
                     Width="Auto"/>
         </Grid>
     </Grid>
-
 </Page>

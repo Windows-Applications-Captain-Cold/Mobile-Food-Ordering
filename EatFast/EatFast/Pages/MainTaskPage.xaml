@@ -15,6 +15,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
             <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -65,6 +66,7 @@
                    Text="Main Project"
                    FontSize="40"/>
         <TextBlock Width="310"
+                   Margin="0,30,0,0"
                    Height="270"
                    Grid.Row="4"
                    Grid.Column="0"
@@ -87,8 +89,18 @@
             Margin="0"
             FontSize="13"
             Grid.Row="5"
+            HorizontalAlignment="Left"
             Grid.Column="1"
             Content="Go to Leader page"
             />
+        <Button
+            Grid.Row="6"
+            Grid.ColumnSpan="2"
+            Style="{StaticResource Cool}"
+            HorizontalAlignment="Stretch"
+            FontSize="14"
+            Margin="0,4,0,0"
+            Content="Create Main Project"/>
+
     </Grid>
 </Page>
