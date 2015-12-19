@@ -121,8 +121,8 @@
     <Compile Include="Pages\CurrentTask.xaml.cs">
       <DependentUpon>CurrentTask.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\LeaderPage.xaml.cs">
-      <DependentUpon>LeaderPage.xaml</DependentUpon>
+    <Compile Include="Pages\LiderPage.xaml.cs">
+      <DependentUpon>LiderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LocationsPage.xaml.cs">
       <DependentUpon>LocationsPage.xaml</DependentUpon>
@@ -192,7 +192,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LeaderPage.xaml">
+    <Page Include="Pages\LiderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

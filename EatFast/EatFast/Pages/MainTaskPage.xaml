@@ -51,13 +51,16 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Members"
-                Style="{StaticResource Cool}"/>
+                Style="{StaticResource Cool}" 
+                Click="GoToMemberPage"/>
         <Button Grid.Row="2"
                 Grid.Column="1"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Tasks"
+                Click="GoToTaskPage"
                 Style="{StaticResource Cool}"/>
+        
         <TextBlock Grid.Row="4"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
@@ -92,7 +95,7 @@
             HorizontalAlignment="Left"
             Grid.Column="1"
             Content="Go to Leader page"
-            />
+            Click="GoToLeaderPage"/>
         <Button
             Grid.Row="6"
             Grid.ColumnSpan="2"
@@ -100,7 +103,8 @@
             HorizontalAlignment="Stretch"
             FontSize="14"
             Margin="0,4,0,0"
-            Content="Create Main Project"/>
+            Content="Create Main Project"
+            Click="GoToCreateMainProject"/>
 
     </Grid>
 </Page>

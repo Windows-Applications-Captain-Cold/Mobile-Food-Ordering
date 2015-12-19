@@ -26,5 +26,29 @@ namespace Teamer.Pages
         {
             this.InitializeComponent();
         }
+
+        private void GoToMemberPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MembersPage));
+
+        }
+
+        private void GoToTaskPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TasksPage));
+
+        }
+
+        private void GoToLeaderPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LiderPage));
+
+        }
+
+        private void GoToCreateMainProject(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateMainProjectPage));
+
+        }
     }
 }

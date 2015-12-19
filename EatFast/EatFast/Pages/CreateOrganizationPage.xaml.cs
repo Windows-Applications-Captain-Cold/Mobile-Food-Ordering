@@ -27,6 +27,16 @@ namespace Teamer.Pages
             this.InitializeComponent();
         }
 
-       
+        private void CreateOrganization(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AccountPage));
+
+        }
+
+        private void JoinOrganization(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AccountPage));
+
+        }
     }
 }

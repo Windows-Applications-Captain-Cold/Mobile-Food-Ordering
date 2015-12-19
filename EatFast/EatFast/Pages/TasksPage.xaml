@@ -76,7 +76,8 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Members"
-                Style="{StaticResource Cool}"/>
+                Style="{StaticResource Cool}" 
+                Click="GoToMembersPage"/>
         <Button Grid.Row="2"
                 Grid.Column="1"
                 HorizontalAlignment="Stretch"
