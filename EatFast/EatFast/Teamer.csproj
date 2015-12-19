@@ -110,6 +110,9 @@
     <Compile Include="Pages\LocationsPage.xaml.cs">
       <DependentUpon>LocationsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MainTaskPage.xaml.cs">
+      <DependentUpon>MainTaskPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\LocationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainTaskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
