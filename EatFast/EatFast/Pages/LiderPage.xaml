@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="Teamer.Pages.LiderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Teamer.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Name="tete">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <!--binding-->
+                <Image
+                        Grid.Column="0" 
+                        Source="/Design/Untitled.png" />
+
+                <TextBlock 
+                        Margin="10"
+                        Grid.Column="1"
+                        VerticalAlignment="Bottom"
+                        Text="Pesho peshov Peshaka"/>
+            </Grid>
+
+        </DataTemplate>
+    </Page.Resources>
+
+
+    <Grid Style="{StaticResource mainGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Leader"
+                   FontSize="37"/>
+        <TextBlock
+            HorizontalAlignment="Left"
+            Grid.Row="2"
+            Text="Create Task"/>
+        <TextBox
+            Grid.Row="3"
+            PlaceholderText="Enter Task "/>
+        <TextBlock
+            HorizontalAlignment="Left"
+            Grid.Row="5"
+            Text="Send To"/>
+
+        <ComboBox  ItemTemplate="{StaticResource tete}"
+            Grid.Row="6"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <Grid>
+            </Grid>
+        </ComboBox>
+        <Button
+            Style="{StaticResource Cool}"
+            Grid.Row="8"
+            Content="Send Task"/>
+
+    </Grid>
+
+</Page>
