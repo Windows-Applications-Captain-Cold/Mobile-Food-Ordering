@@ -152,12 +152,15 @@
     <Compile Include="ViewModels\BaseUserContentViewModel.cs" />
     <Compile Include="ViewModels\Converters\TaskDoneFillConverter.cs" />
     <Compile Include="ViewModels\IContentViewModel.cs" />
+    <Compile Include="ViewModels\IOrganization.cs" />
     <Compile Include="ViewModels\IPageViewModel.cs" />
     <Compile Include="ViewModels\Converters\OrganisationNameConverter.cs" />
     <Compile Include="ViewModels\OrganisationViewModel.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProjectViewModel.cs" />
     <Compile Include="ViewModels\SettingsPanelViewModel.cs" />
+    <Compile Include="ViewModels\TaskViewModel.cs" />
     <Compile Include="ViewModels\UserAccountViewModel.cs" />
     <Compile Include="ViewModels\UserAuthenticateViewModel.cs" />
     <Compile Include="ViewModels\UserSummaryViewModel.cs" />

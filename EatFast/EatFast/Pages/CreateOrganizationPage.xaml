@@ -12,15 +12,16 @@
         <DataTemplate x:Name="testTemplate">
             <Grid >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
                 <!--Binding-->
-                <TextBlock  Width="200" Grid.Column="0" Text="asdasdasdd"/>
-                <Button Style="{StaticResource Cool}" Grid.Column="1" Content="Accept"/>
-                <Button Style="{StaticResource Cool}" Grid.Column="2" Content="Reject"/>
+                <TextBlock 
+                    Width="200" 
+                    Grid.Column="0" 
+                    Text="{Binding}"/>
+                <Button Style="{StaticResource Cool}" Grid.Column="2" Content="Join"/>
 
             </Grid>
 
@@ -51,10 +52,10 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom" />
 
-        <TextBox x:Name="OrganizationCreate"
-            Grid.Row="2"
+        <TextBox Name="OrganizationCreate"
+                 Grid.Row="2"
                  PlaceholderText="Enter Organization Name"
-              VerticalAlignment="Center"
+                 VerticalAlignment="Center"
                  TextAlignment="Left"/>
 
         <TextBlock Text="Join Organizations"
@@ -78,13 +79,6 @@
             <Grid>
             </Grid>
         </ListView>
-
-        <Button 
-            Style="{StaticResource Cool}" 
-            Content="Join"
-            Grid.Row="10" 
-            Height="30"
-            Click="JoinOrganization"/>
     </Grid>
     <Page.BottomAppBar>
         <AppBar>

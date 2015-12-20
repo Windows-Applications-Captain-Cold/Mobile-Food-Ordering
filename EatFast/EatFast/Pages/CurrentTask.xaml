@@ -32,10 +32,10 @@
                    Height="23"
                    Background="Green"
                    VerticalAlignment="Bottom">
-                <TextBlock    
+                <TextBlock   Name="OrgName" 
                 Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
-                   Text=" Telerik Organization"
+                   Text="{Binding Organization}"
                    FontSize="19"/>
             </Grid>
         </Grid>
@@ -52,7 +52,7 @@
             <TextBlock
                 Margin="15,0,0,0"
                 VerticalAlignment="Bottom"
-                Text="Database"
+                Text="{Binding TaskName}"
                 FontSize="30"/>
         </StackPanel>
 
@@ -74,22 +74,7 @@
             ManipulationMode="All"
             ManipulationDelta="Zoom"
             DoubleTapped="TextBlock_DoubleTapped"
-            Text="Lorem Ipsum is simply dummy text of the printing 
- and typesetting industry. Lorem Ipsum has been the 
- industry's standard dummy text ever since the 1500s,
- release of Letraset sheets containing Lorem Ipsum passages,
- and more recently with desktop publishing software like Aldus 
- PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing 
- and typesetting industry. Lorem Ipsum has been the 
- industry's standard dummy text ever since the 1500s,
- release of Letraset sheets containing Lorem Ipsum passages,
- and more recently with desktop publishing software like Aldus 
- PageMaker including versions of Lorem IpsumLorem Ipsum is simply dummy text of the printing 
- and typesetting industry. Lorem Ipsum has been the 
- industry's standard dummy text ever since the 1500s,
- release of Letraset sheets containing Lorem Ipsum passages,
- and more recently with desktop publishing software like Aldus 
- PageMaker including versions of Lorem Ipsum"
+            Text="{Binding Description}"
             TextWrapping="WrapWholeWords"/>
         </ScrollViewer>
     </Grid>

@@ -12,8 +12,8 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.7*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="32"/>
             <RowDefinition Height="1.2*"/>
         </Grid.RowDefinitions>
@@ -39,10 +39,11 @@
                    Height="23"
                    Background="Green"
                    VerticalAlignment="Bottom">
-                <TextBlock    
+                <TextBlock   
+                    Width="Auto"
                     Grid.ColumnSpan="2"
                     HorizontalAlignment="Left"
-                    Text="Telerik"
+                    Text="{Binding Organization}"
                     Tapped="TextBlock_Tapped"
                     FontSize="19"/>
             </Grid>
@@ -67,12 +68,14 @@
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
-                   Text="Main Project"
-                   FontSize="40"/>
+                   Text="{Binding ProjectName}"
+                   FontSize="25"
+                   TextWrapping="WrapWholeWords"/>
         <ScrollViewer 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             Grid.Row="4" 
-            Grid.ColumnSpan="2">
+            Grid.ColumnSpan="2"
+            Margin="5">
             <TextBlock 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             Width="300"
@@ -81,23 +84,8 @@
             FontSize="11"
             ManipulationMode="All"
             ManipulationDelta="Zoom"
-                DoubleTapped="TextBlock_DoubleTapped"
-            Text="Lorem Ipsum is simply dummy text of the printing 
- and typesetting industry. Lorem Ipsum has been the 
- industry's standard dummy text ever since the 1500s,
- release of Letraset sheets containing Lorem Ipsum passages,
- and more recently with desktop publishing software like Aldus 
- PageMaker including versions of Lorem Ipsum Ipsum is simply dummy text of the printing 
- and typesetting industry. Lorem Ipsum has been the 
- industry's standard dummy text ever since the 1500s,
- release of Letraset sheets containing Lorem Ipsum passages,
- and more recently with desktop publishing software like Aldus 
- PageMaker including versions of Lorem Ipsuvm Ipsum is simply dummy text of the printing 
- and typesetting industry. Lorem Ipsum has been the 
- industry's standard dummy text ever since the 1500s,
- release of Letraset sheets containing Lorem Ipsum passages,
- and more recently with desktop publishing software like Aldus 
- PageMaker including versions of Lorem Ipsum."
+            DoubleTapped="TextBlock_DoubleTapped"
+            Text="{Binding ProjectDescription}"
             TextWrapping="WrapWholeWords"/>
         </ScrollViewer>
         <TextBox

@@ -40,7 +40,7 @@ namespace Teamer
             else
             {
                 var userSummaryViewModel = await this.ViewModel.Register(email, password);
-                this.Frame.Navigate(typeof(SummaryPage), userSummaryViewModel);
+                this.Frame.Navigate(typeof(CreateProjectPage), userSummaryViewModel);
             }
         }
 
