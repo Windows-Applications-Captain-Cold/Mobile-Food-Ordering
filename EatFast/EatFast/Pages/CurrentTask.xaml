@@ -93,4 +93,9 @@
             TextWrapping="WrapWholeWords"/>
         </ScrollViewer>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

@@ -63,9 +63,5 @@
                     Width="Auto"/>
             
         </Grid>
-
-        <ListBox ItemsSource="{Binding Tasks}">
-            <TextBlock Text="{Binding Name}"></TextBlock>
-        </ListBox>
     </Grid>
 </Page>

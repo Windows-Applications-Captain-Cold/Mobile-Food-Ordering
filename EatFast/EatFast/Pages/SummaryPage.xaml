@@ -51,29 +51,37 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Button Name="Organisation_Button"
                 Content="{Binding Organisation}"
                 Grid.Column="1"
                 Grid.Row="0"
-                FontSize="20" 
+                FontSize="16" 
+                Style="{StaticResource Cool}"
                 Click="Organisation_Button_Click"/>
         <Button Name="MainProject_Button"
                 Content="{Binding MainProject}"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Grid.Row="1"
-                FontSize="18"
-                Click="MainProject_Button_Click"/>
+                FontSize="14"
+                Width="Auto"
+                Click="MainProject_Button_Click"
+                Style="{StaticResource Cool}"/>
 
-        <ListBox Grid.Row="2"
+        <ListView Grid.Row="2"
                  Grid.Column="0"
                  Grid.ColumnSpan="3"
                  ItemsSource="{Binding Projects}"
                  ItemTemplate="{StaticResource UserTasksTemplate}" />
 
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

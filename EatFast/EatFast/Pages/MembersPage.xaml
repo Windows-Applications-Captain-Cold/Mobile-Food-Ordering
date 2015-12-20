@@ -33,7 +33,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.7*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
@@ -44,8 +44,8 @@
 
         <Grid  Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0"
@@ -55,7 +55,8 @@
                    Background="Green"
                    VerticalAlignment="Bottom">
                 <TextBlock    
-                Grid.ColumnSpan="2"
+                   Width="Auto"
+                   Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    Text=" Telerik Organization"
                    FontSize="19"/>
@@ -94,4 +95,9 @@
             </Grid>
         </ListView>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

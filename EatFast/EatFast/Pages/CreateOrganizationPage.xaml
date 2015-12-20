@@ -86,4 +86,9 @@
             Height="30"
             Click="JoinOrganization"/>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

@@ -11,7 +11,7 @@
         <DataTemplate x:Name="memberList">
             <Grid Holding="Grid_Holding"
                 HorizontalAlignment="Stretch"
-                Width="380">
+                Width="330">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="1*"/>
@@ -30,7 +30,7 @@
                 <ComboBox Grid.Column="2"
                           Width="117"
                           VerticalAlignment="Center"
-                          HorizontalAlignment="Left">
+                          HorizontalAlignment="Right">
                     <ComboBoxItem>Done</ComboBoxItem>
                     <ComboBoxItem>In Progress</ComboBoxItem>
                 </ComboBox>
@@ -44,7 +44,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.7*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
@@ -55,8 +55,8 @@
 
         <Grid  Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0"
@@ -66,6 +66,7 @@
                    Background="Green"
                    VerticalAlignment="Bottom">
             <TextBlock    
+                Width="Auto"
                 Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    Text=" Telerik Organization"
@@ -105,4 +106,9 @@
             </Grid>
         </ListView>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

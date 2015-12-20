@@ -61,5 +61,12 @@ namespace Teamer.Pages
                 img.Source = new BitmapImage(new Uri(photo.Path));
             }
         }
+        public void GoBack(object sender, RoutedEventArgs args)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+        }
     }
 }
