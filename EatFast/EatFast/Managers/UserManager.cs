@@ -13,13 +13,10 @@
         private const string BaseAddress = "http://eatfast.herokuapp.com/";
         private const string LoginEndpoint = "api/login";
         private const string RegisterEndpoint = "api/signup";
-
         private HttpClient httpClient;
 
         public UserManager()
         {
-            //var baseFilter = new HttpBaseProtocolFilter();
-            //baseFilter.IgnorableServerCertificateErrors.Add(Windows.Security.Cryptography.Certificates.ChainValidationResult.InvalidCertificateAuthorityPolicy);
             var httpBaseFilter = new HttpBaseProtocolFilter
             {
                 AllowUI = false

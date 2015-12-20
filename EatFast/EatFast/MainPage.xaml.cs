@@ -40,7 +40,7 @@ namespace Teamer
             {
                 //TODO: Catch exception when server is unreachable
                 var userSummaryViewModel = await this.ViewModel.Login(email, password);
-                this.Frame.Navigate(typeof(CurrentTask), userSummaryViewModel);
+                this.Frame.Navigate(typeof(SummaryPage), userSummaryViewModel);
             }
             else
             {

@@ -67,5 +67,10 @@ namespace Teamer.Pages
 
 
         }
+
+        private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OrganisationSummaryPage));
+        }
     }
 }

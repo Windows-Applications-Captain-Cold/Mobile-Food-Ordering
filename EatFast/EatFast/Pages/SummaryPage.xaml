@@ -8,7 +8,11 @@
     xmlns:converters="using:Teamer.ViewModels.Converters"
     mc:Ignorable="d">
 
-    <Grid Style="{StaticResource mainGrid}">
+    <Grid Name="SummaryMainGrid" Style="{StaticResource mainGrid}"
+          ManipulationStarted="SummaryMainGrid_ManipulationStarted"
+          ManipulationDelta="SummaryMainGrid_ManipulationDelta"
+          ManipulationCompleted="SummaryMainGrid_ManipulationCompleted"
+          ManipulationMode="All">
         <Grid.Resources>
             <converters:TaskDoneFillConverter x:Key="TaskDoneFillConverter"/>
             <DataTemplate x:Name="UserTasksTemplate">
@@ -51,15 +55,19 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Organisation}"
-                   Grid.Column="1"
-                   Grid.Row="0"
-                   FontSize="20" />
-        <TextBlock Text="{Binding MainProject}"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="3"
-                   Grid.Row="1"
-                   FontSize="18"/>
+        <Button Name="Organisation_Button"
+                Content="{Binding Organisation}"
+                Grid.Column="1"
+                Grid.Row="0"
+                FontSize="20" 
+                Click="Organisation_Button_Click"/>
+        <Button Name="MainProject_Button"
+                Content="{Binding MainProject}"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="1"
+                FontSize="18"
+                Click="MainProject_Button_Click"/>
 
         <ListBox Grid.Row="2"
                  Grid.Column="0"

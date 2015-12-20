@@ -133,6 +133,9 @@
     <Compile Include="Pages\MembersPage.xaml.cs">
       <DependentUpon>MembersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrganisationSummaryPage.xaml.cs">
+      <DependentUpon>OrganisationSummaryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PersonsAccontPage.xaml.cs">
       <DependentUpon>PersonsAccontPage.xaml</DependentUpon>
     </Compile>
@@ -210,6 +213,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MembersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrganisationSummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
