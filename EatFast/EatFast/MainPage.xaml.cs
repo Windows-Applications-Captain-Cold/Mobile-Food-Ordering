@@ -38,13 +38,14 @@ namespace Teamer
             var buttonSender = sender as Button;
             if (buttonSender.Name == "loginButton")
             {
-                var userContentViewModel = await this.ViewModel.Login(email, password);
-                this.Frame.Navigate(typeof(AccountPage), userContentViewModel);
+                //TODO: Catch exception when server is unreachable
+                var userSummaryViewModel = await this.ViewModel.Login(email, password);
+                this.Frame.Navigate(typeof(SummaryPage), userSummaryViewModel);
             }
             else
             {
-                var viewModel = this.ViewModel;
-                this.Frame.Navigate(typeof(AccountPage), await viewModel.Register(email, password));
+                var userSummaryViewModel = await this.ViewModel.Register(email, password);
+                this.Frame.Navigate(typeof(SummaryPage), userSummaryViewModel);
             }
         }
 

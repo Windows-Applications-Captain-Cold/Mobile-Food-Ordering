@@ -30,12 +30,12 @@ namespace Teamer.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.ViewModel = e.Parameter as UserContentViewModel;
+            this.ViewModel = e.Parameter as UserSummaryViewModel;
         }
 
-        public UserContentViewModel ViewModel
+        public UserSummaryViewModel ViewModel
         {
-            get { return this.DataContext as UserContentViewModel; }
+            get { return this.DataContext as UserSummaryViewModel; }
             set { this.DataContext = value; }
         }
     }

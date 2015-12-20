@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Teamer.Models
 {
-    class Team
+    public class Team
     {
         public string Name { get; set; }
 

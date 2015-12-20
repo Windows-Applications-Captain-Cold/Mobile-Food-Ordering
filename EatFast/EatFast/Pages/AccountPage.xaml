@@ -5,8 +5,10 @@
     xmlns:local="using:Teamer.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    xmlns:converters="using:Teamer.ViewModels.Converters">
     <Page.Resources>
+        <converters:OrganisationNameConverter x:Key="OrganisationDataConverter"/>
         <DataTemplate x:Name="tacskTemplate">
             <Grid  BorderBrush="Gray" BorderThickness="2">
                 <Grid.ColumnDefinitions>
@@ -58,14 +60,14 @@
         <TextBlock Grid.Row="0"
                    Grid.Column="1"
                    VerticalAlignment="Top"
-                   Text="My Account"
+                   Text="{Binding Email}"
                    FontSize="14"/>
         <TextBlock Grid.Row="0"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
-                   Text=" Gosho georgiev"/>
+                   Text="{Binding Name}"/>
         <Grid Grid.Row="1"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
@@ -73,7 +75,8 @@
                    Background="Green">
         <TextBlock    
                    HorizontalAlignment="Left"
-                   Text=" Telerik Organization"
+                   Text="{Binding Organisation}"
+                   Visibility="{x:Bind Converter={StaticResource OrganisationDataConverter}}"
                    FontSize="19"/>
         </Grid>
         <Image Grid.Row="0"
@@ -113,10 +116,8 @@
                   Grid.ColumnSpan="3"
                   HorizontalAlignment="Stretch"
                   ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                  ItemTemplate="{StaticResource tacskTemplate}">
-            <Grid>
-
-            </Grid>
+                  ItemTemplate="{StaticResource tacskTemplate}"
+                  ItemsSource="{Binding Projects}">
         </ListView>
     </Grid>
 

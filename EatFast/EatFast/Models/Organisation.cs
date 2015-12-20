@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Teamer.Models
 {
-    class Organisation
+    public class Organisation
     {
         public string Name { get; set; }
 
         public string Owner { get; set; }
 
-        public string Project { get; set; }
+        public Project Project { get; set; }
 
         public ICollection<Team> Teams { get; set; }
     }

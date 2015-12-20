@@ -136,19 +136,24 @@
     <Compile Include="Pages\PersonsAccontPage.xaml.cs">
       <DependentUpon>PersonsAccontPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SummaryPage.xaml.cs">
+      <DependentUpon>SummaryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TasksPage.xaml.cs">
       <DependentUpon>TasksPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Converters\TaskDoneFillConverter.cs" />
     <Compile Include="ViewModels\IContentViewModel.cs" />
     <Compile Include="ViewModels\IPageViewModel.cs" />
+    <Compile Include="ViewModels\Converters\OrganisationNameConverter.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\SettingsPanelViewModel.cs" />
     <Compile Include="ViewModels\UserAuthenticateViewModel.cs" />
-    <Compile Include="ViewModels\UserContentViewModel.cs" />
+    <Compile Include="ViewModels\UserSummaryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -209,6 +214,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PersonsAccontPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

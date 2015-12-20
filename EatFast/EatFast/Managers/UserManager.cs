@@ -10,8 +10,9 @@
 
     public class UserManager: IUserManager
     {
-        private const string LoginEndpoint = "http://127.0.0.1:3000/api/login";
-        private const string RegisterEndpoint = "http://127.0.0.1:3000/api/signup";
+        private const string BaseAddress = "http://eatfast.herokuapp.com/";
+        private const string LoginEndpoint = "api/login";
+        private const string RegisterEndpoint = "api/signup";
 
         private HttpClient httpClient;
 
@@ -63,7 +64,7 @@
             var jsonData = JsonConvert.SerializeObject(authenticateModel);
             var jsonAuthData = new HttpStringContent(jsonData);
             jsonAuthData.Headers.ContentType = new HttpMediaTypeHeaderValue("application/json");
-            return await this.httpClient.PostAsync(new Uri(endpoint), jsonAuthData);
+            return await this.httpClient.PostAsync(new Uri(BaseAddress + endpoint), jsonAuthData);
         }
     }
 }

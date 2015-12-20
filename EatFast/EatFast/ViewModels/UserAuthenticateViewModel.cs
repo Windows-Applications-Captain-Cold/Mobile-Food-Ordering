@@ -26,7 +26,7 @@ namespace Teamer.ViewModels
             this.userManager = manager;
         }
 
-        public async Task<UserContentViewModel> Login(string username, string password)
+        public async Task<UserSummaryViewModel> Login(string username, string password)
         {
             var userResponseData = await this.userManager.Login(username, password);
             if (string.IsNullOrEmpty(userResponseData))
@@ -34,10 +34,10 @@ namespace Teamer.ViewModels
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<UserContentViewModel>(userResponseData);
+            return JsonConvert.DeserializeObject<UserSummaryViewModel>(userResponseData);
         }
 
-        public async Task<UserContentViewModel> Register(string username, string password)
+        public async Task<UserSummaryViewModel> Register(string username, string password)
         {
             var userResponseData = await this.userManager.Register(username, password);
             if (string.IsNullOrEmpty(userResponseData))
@@ -45,7 +45,7 @@ namespace Teamer.ViewModels
                 return null;
             }
 
-            return JsonConvert.DeserializeObject<UserContentViewModel>(userResponseData);
+            return JsonConvert.DeserializeObject<UserSummaryViewModel>(userResponseData);
         }
     }
 }
