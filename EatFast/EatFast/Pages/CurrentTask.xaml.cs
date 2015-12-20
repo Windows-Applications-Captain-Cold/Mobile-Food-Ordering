@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Teamer.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,7 @@ namespace Teamer.Pages
         public CurrentTask()
         {
             this.InitializeComponent();
+            this.DataContext = new TaskViewModel("Emo", "Peahosos", "dfgafgsfghdhfhfghfghgfhf");
         }
 
         private void Zoom(object sender, ManipulationDeltaRoutedEventArgs e)

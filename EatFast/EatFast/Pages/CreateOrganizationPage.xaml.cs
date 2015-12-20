@@ -29,13 +29,13 @@ namespace Teamer.Pages
 
         private void CreateOrganization(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AccountPage));
+            this.Frame.Navigate(typeof(CreateMainProjectPage));
 
         }
 
         private void JoinOrganization(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AccountPage));
+            this.Frame.Navigate(typeof(CreateMainProjectPage));
 
         }
         public void GoBack(object sender, RoutedEventArgs args)

@@ -23,6 +23,8 @@ namespace Teamer.Pages
         public AccountPage()
         {
             this.InitializeComponent();
+            
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
