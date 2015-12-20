@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Name="memberList">
-            <Grid  >
+            <Grid  Tapped="GoToPesronsAccountPage">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="7*"/>
@@ -72,7 +72,8 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Tasks"
-                Style="{StaticResource Cool}"/>
+                Style="{StaticResource Cool}" 
+                Click="GoToTaskPage"/>
         <TextBlock 
             Grid.Row="3"
             Grid.ColumnSpan="2"

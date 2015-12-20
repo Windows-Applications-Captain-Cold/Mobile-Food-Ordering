@@ -26,5 +26,17 @@ namespace Teamer.Pages
         {
             this.InitializeComponent();
         }
+
+        private void GoToTaskPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TasksPage));
+
+        }
+
+        private void GoToPesronsAccountPage(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PersonsAccontPage));
+
+        }
     }
 }

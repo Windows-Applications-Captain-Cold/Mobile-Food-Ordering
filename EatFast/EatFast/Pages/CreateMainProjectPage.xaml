@@ -33,13 +33,14 @@
             FontSize="20"
             Text="Project Password"
             Grid.Row="4"/>
-        <TextBox
+        <TextBox x:Name="ProjectPassword"
             PlaceholderText="Enter Project Password"
             Grid.Row="5"/>
         <Button
             Style="{StaticResource Cool}"
             Content="Create Main Project"
-            Grid.Row="7"/>
+            Grid.Row="7"
+            Click="CreateProject"/>
 
     </Grid>
 </Page>

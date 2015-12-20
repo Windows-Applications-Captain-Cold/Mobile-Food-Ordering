@@ -10,7 +10,9 @@
     <Page.Resources>
         <converters:OrganisationNameConverter x:Key="OrganisationDataConverter"/>
         <DataTemplate x:Name="tacskTemplate">
-            <Grid  BorderBrush="Gray" BorderThickness="2">
+            <Grid  BorderBrush="Gray" 
+                   BorderThickness="2"
+                  Holding="Grid_Holding">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*"/>
                     <ColumnDefinition Width="3 *"/>
@@ -79,7 +81,8 @@
                    Visibility="{x:Bind Converter={StaticResource OrganisationDataConverter}}"
                    FontSize="19"/>
         </Grid>
-        <Image Grid.Row="0"
+        <Image Name="img" 
+               Grid.Row="0"
                Grid.Column="2"
                Source="/Design/Untitled.png" 
                HorizontalAlignment="Left"
@@ -90,7 +93,8 @@
                 Grid.Column="2"
                 FontSize="13"
                 VerticalAlignment="Top"
-                Content="Take picture" Grid.ColumnSpan="2">
+                Content="Take picture" Grid.ColumnSpan="2" 
+                Click="TakePicture">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Color="Gray" Offset="0.0"/>

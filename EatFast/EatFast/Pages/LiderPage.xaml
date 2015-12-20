@@ -69,7 +69,8 @@
         <Button
             Style="{StaticResource Cool}"
             Grid.Row="8"
-            Content="Send Task"/>
+            Content="Send Task"
+            Click="SendTask"/>
 
     </Grid>
 

@@ -26,5 +26,10 @@ namespace Teamer.Pages
         {
             this.InitializeComponent();
         }
+
+        private void CreateProject(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainTaskPage));
+        }
     }
 }

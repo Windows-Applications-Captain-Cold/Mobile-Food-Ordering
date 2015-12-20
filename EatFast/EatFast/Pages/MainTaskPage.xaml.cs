@@ -26,5 +26,44 @@ namespace Teamer.Pages
         {
             this.InitializeComponent();
         }
+
+        private void GoToMemberPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MembersPage));
+
+        }
+
+        private void GoToTaskPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TasksPage));
+
+        }
+
+        private void GoToLeaderPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LiderPage));
+
+        }
+
+        private void GoToCreateMainProject(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CreateMainProjectPage));
+
+        }
+
+        private void Zoom(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            var grid = sender as TextBlock;
+            var delta = e.Delta;
+            var scale = delta.Scale;
+            grid.FontSize += scale;
+
+        }
+
+        private void TextBlock_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            var grid = sender as TextBlock;
+            grid.FontSize = 11;
+        }
     }
 }
