@@ -54,8 +54,7 @@ namespace Teamer
             set { this.DataContext = value; }
         }
 
-        
-
+       
         //public void NavigateToPage(object sender, RoutedEventArgs args)
         //{
         //    this.Frame.Navigate(typeof(LocationsPage));
