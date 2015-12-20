@@ -13,9 +13,9 @@
                 HorizontalAlignment="Stretch"
                 Width="380">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <!--binding-->
                 <Image
@@ -28,9 +28,9 @@
                         VerticalAlignment="Bottom"
                         Text="Taks 1"/>
                 <ComboBox Grid.Column="2"
-                          Width="120"
+                          Width="117"
                           VerticalAlignment="Center"
-                          HorizontalAlignment="Right">
+                          HorizontalAlignment="Left">
                     <ComboBoxItem>Done</ComboBoxItem>
                     <ComboBoxItem>In Progress</ComboBoxItem>
                 </ComboBox>

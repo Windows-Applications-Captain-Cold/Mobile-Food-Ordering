@@ -11,10 +11,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.7*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="7*"/>
-            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="32"/>
             <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -68,15 +68,16 @@
                    VerticalAlignment="Top"
                    Text="Main Project"
                    FontSize="40"/>
-        <TextBlock Width="310"
-                   Margin="0,30,0,0"
-                   Height="270"
+        <TextBlock Width="280"
+                   Margin="0,100,0,0"
+                   Height="auto"
                    Grid.Row="4"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    FontSize="11"
                    Foreground="Black"
                    TextWrapping="WrapWholeWords"
+                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                    ManipulationMode="All"
                    ManipulationDelta="Zoom"
                    DoubleTapped="TextBlock_DoubleTapped"

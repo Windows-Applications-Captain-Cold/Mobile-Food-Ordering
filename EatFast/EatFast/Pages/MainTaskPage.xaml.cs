@@ -56,7 +56,7 @@ namespace Teamer.Pages
             var grid = sender as TextBlock;
             var delta = e.Delta;
             var scale = delta.Scale;
-            grid.FontSize += scale;
+            grid.FontSize += scale/3;
 
         }
 
