@@ -88,7 +88,16 @@
     </Grid>
     <Page.BottomAppBar>
         <AppBar>
-            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Label="Back" 
+                                      Icon="Back" 
+                                      Click="GoBack"/>
+                <Button Content="My Account"
+                                HorizontalContentAlignment="Left"
+                                Width="150" 
+                                Height="40"
+                                Click="GotoMyAccount"/>
+            </StackPanel>
         </AppBar>
     </Page.BottomAppBar>
 </Page>
