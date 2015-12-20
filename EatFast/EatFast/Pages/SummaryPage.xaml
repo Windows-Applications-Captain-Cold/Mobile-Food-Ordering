@@ -9,39 +9,38 @@
     mc:Ignorable="d">
 
     <Grid Name="SummaryMainGrid" Style="{StaticResource mainGrid}"
-          ManipulationStarted="SummaryMainGrid_ManipulationStarted"
           ManipulationDelta="SummaryMainGrid_ManipulationDelta"
-          ManipulationCompleted="SummaryMainGrid_ManipulationCompleted"
           ManipulationMode="All">
         <Grid.Resources>
             <converters:TaskDoneFillConverter x:Key="TaskDoneFillConverter"/>
             <DataTemplate x:Name="UserTasksTemplate">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <!-- TODO: The first column should take 80% of the width all the time-->
-                        <ColumnDefinition Width="9*" />
-                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="35" />
+                        <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Column="0" HorizontalAlignment="Stretch" Background="Yellow">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="1*" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock VerticalAlignment="Center" Grid.Column="0" Text="{Binding Name}" />
-                            <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="{Binding DueDate}" />
-                        </Grid>
-                    </Border>
-                    <!--TODO: fix converter-->
-                    <Ellipse Grid.Column="1"
-                             Height="30"
-                             Width="30"
-                             Fill="{Binding Done,
-                                    Converter={StaticResource TaskDoneFillConverter}}" 
+
+                    <TextBlock Text="{Binding Name}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Stretch"
+                               Grid.Column="1"/>
+
+                    <Ellipse Grid.Column="0"
+                             Height="10"
+                             Width="10"
+                             Fill="Green" 
                              VerticalAlignment="Center" />
+
+                    <TextBlock VerticalAlignment="Center"
+                               Grid.Row="1"
+                               Grid.Column="1"
+                               FontSize="10"
+                               Text="{Binding DueDate}"
+                               Margin="20 0 0 0" />
                 </Grid>
             </DataTemplate>
         </Grid.Resources>
@@ -53,7 +52,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Button Name="Organisation_Button"
                 Content="{Binding Organisation}"
@@ -73,10 +72,9 @@
                 Style="{StaticResource Cool}"/>
 
         <ListView Grid.Row="2"
-                 Grid.Column="0"
-                 Grid.ColumnSpan="3"
-                 ItemsSource="{Binding Projects}"
-                 ItemTemplate="{StaticResource UserTasksTemplate}" />
+                  Grid.ColumnSpan="4"
+                ItemsSource="{Binding Projects}"
+                ItemTemplate="{StaticResource UserTasksTemplate}" />
 
     </Grid>
     <Page.BottomAppBar>

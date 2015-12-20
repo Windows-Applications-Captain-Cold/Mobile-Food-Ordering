@@ -9,8 +9,8 @@
 
     <Grid Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Name="Organisation"
@@ -26,10 +26,10 @@
         <ListView Grid.Row="2"
                   Foreground="Azure"
                   Margin="0 50 0 0">
-            <TextBlock Foreground="Azure" Text="Team 1 Graphics"/>
-            <TextBlock Foreground="Azure" Text="Team 2 Sound"/>
-            <TextBlock Foreground="Azure" Text="Team 3 Server"/>
-            <TextBlock Foreground="Azure" Text="Team 4 Functionality"/>
+            <TextBlock Text="Team 1 Graphics"/>
+            <TextBlock Text="Team 2 Sound"/>
+            <TextBlock Text="Team 3 Server"/>
+            <TextBlock Text="Team 4 Functionality"/>
         </ListView>
     </Grid>
     <Page.BottomAppBar>

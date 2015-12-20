@@ -16,13 +16,8 @@ using Windows.UI.Xaml.Navigation;
 using Teamer.Pages;
 using System.Threading.Tasks;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace Teamer
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -54,22 +49,5 @@ namespace Teamer
             get { return this.DataContext as UserAuthenticateViewModel; }
             set { this.DataContext = value; }
         }
-
-        //public void NavigateToPage(object sender, RoutedEventArgs args)
-        //{
-        //    this.Frame.Navigate(typeof(LocationsPage));
-        //}
-        //public void NavigateToMenuPage(object sender, RoutedEventArgs args)
-        //{
-        //    this.Frame.Navigate(typeof(FoodMenuPage));
-        //}
-
-        //public void GoBack(object sender, RoutedEventArgs args)
-        //{
-        //    if (this.Frame.CanGoBack)
-        //    {
-        //        this.Frame.GoBack();
-        //    }
-        //}
     }
 }

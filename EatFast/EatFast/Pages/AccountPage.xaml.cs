@@ -27,12 +27,12 @@ namespace Teamer.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.ViewModel = e.Parameter as UserSummaryViewModel;
+            this.ViewModel = e.Parameter as UserAccountViewModel;
         }
 
-        public UserSummaryViewModel ViewModel
+        public UserAccountViewModel ViewModel
         {
-            get { return this.DataContext as UserSummaryViewModel; }
+            get { return this.DataContext as UserAccountViewModel; }
             set { this.DataContext = value; }
         }
 
@@ -41,20 +41,11 @@ namespace Teamer.Pages
             this.Frame.Navigate(typeof(CurrentTask));
         }
 
-        private void TakePicture(object sender, RoutedEventArgs e)
+        private async void TakePicture(object sender, RoutedEventArgs e)
         {
-            this.InitCamera();
+            this.img.Source = await this.ViewModel.TakePicture();
         }
 
-        private async void InitCamera()
-        {
-            var camera = new CameraCaptureUI();
-            var photo = await camera.CaptureFileAsync(CameraCaptureUIMode.Photo);
-            if (photo != null)
-            {
-                img.Source = new BitmapImage(new Uri(photo.Path));
-            }
-        }
         public void GoBack(object sender, RoutedEventArgs args)
         {
             if (this.Frame.CanGoBack)

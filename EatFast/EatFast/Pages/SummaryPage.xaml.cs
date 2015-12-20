@@ -16,15 +16,12 @@ namespace Teamer.Pages
 {
     public sealed partial class SummaryPage : Page
     {
-        private Point initialPoint;
-
         public SummaryPage()
         {
             this.InitializeComponent();
             var bounds = ApplicationView.GetForCurrentView().VisibleBounds;
             var scaleFactor = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
             this.VisibleDisplaySize = new Size(bounds.Width * scaleFactor, bounds.Height * scaleFactor);
-            //this.initialPoint = this.SummaryMainGrid.
         }
 
         public UserSummaryViewModel ViewModel
@@ -43,22 +40,12 @@ namespace Teamer.Pages
             }
         }
 
-        private void SummaryMainGrid_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
-        {
-            
-        }
-
         private void SummaryMainGrid_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
             if (e.Velocities.Linear.X > 1)
             {
                 this.Frame.Navigate(typeof(AccountPage));
             }
-        }
-
-        private void SummaryMainGrid_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
-        {
-
         }
 
         private void MainProject_Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
