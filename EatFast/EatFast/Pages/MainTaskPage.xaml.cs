@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Teamer.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,7 @@ namespace Teamer.Pages
         public MainTaskPage()
         {
             this.InitializeComponent();
+            this.DataContext = new ProjectViewModel("Telerik Organization", "Mobile Application", "Create mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platform");
         }
 
         private void GoToMemberPage(object sender, RoutedEventArgs e)
