@@ -7,6 +7,7 @@
     using Windows.Web.Http;
     using Windows.Web.Http.Filters;
     using Windows.Web.Http.Headers;
+    using Windows.UI.Xaml.Media.Imaging;
 
     public class UserManager: IUserManager
     {

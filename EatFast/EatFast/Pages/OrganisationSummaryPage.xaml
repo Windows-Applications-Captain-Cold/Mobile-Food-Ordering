@@ -14,10 +14,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Name="Organisation"
-                   Text="Telerik"
+                   Text="{Binding Name, Mode=OneWay}"
                    Grid.Row="0"/>
         <Button Name="MainProject" 
-                Content="Develop next generation MMORPG game"
+                Content="{Binding Path=Project.Name}"
                 Click="MainProject_Click"
                 Style="{StaticResource Cool}"
                 Grid.Row="1"
@@ -25,11 +25,9 @@
 
         <ListView Grid.Row="2"
                   Foreground="Azure"
-                  Margin="0 50 0 0">
-            <TextBlock Text="Team 1 Graphics"/>
-            <TextBlock Text="Team 2 Sound"/>
-            <TextBlock Text="Team 3 Server"/>
-            <TextBlock Text="Team 4 Functionality"/>
+                  Margin="0 50 0 0"
+                  ItemsSource="{Binding Path=Teams, Mode=OneWay}">
+            <TextBlock Text="{Binding Path=Name, Mode=OneWay}" />
         </ListView>
     </Grid>
     <Page.BottomAppBar>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Teamer.ViewModels;
+﻿using Teamer.ViewModels;
 using Windows.Foundation;
 using Windows.Graphics.Display;
 using Windows.UI.ViewManagement;
@@ -62,7 +57,7 @@ namespace Teamer.Pages
 
         private void Organisation_Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(OrganisationSummaryPage));
+            this.Frame.Navigate(typeof(OrganisationSummaryPage), this.ViewModel.Organisation);
         }
 
         public void GoBack(object sender, RoutedEventArgs args)
@@ -76,7 +71,6 @@ namespace Teamer.Pages
         private void GotoMyAccount(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AccountPage));
-
         }
     }
 }

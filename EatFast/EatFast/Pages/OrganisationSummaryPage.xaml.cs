@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Teamer.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,18 @@ namespace Teamer.Pages
         public OrganisationSummaryPage()
         {
             this.InitializeComponent();
+            this.ViewModel = new OrganisationViewModel()
+            {
+                Name = "AAA",
+                Project = new Models.Project { Name = "asd"},
+                Teams = new List<string>(){ "asd", "asd", "asd"}
+            };
+        }
+
+        public OrganisationViewModel ViewModel
+        {
+            get { return this.DataContext as OrganisationViewModel; }
+            set { this.DataContext = value; }
         }
 
         private void MainProject_Click(object sender, RoutedEventArgs e)
@@ -43,7 +56,22 @@ namespace Teamer.Pages
         private void GotoMyAccount(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AccountPage));
+        }
 
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var viewModelUpdated = await this.ViewModel
+                .GetOrganisationDetailsAsync(e.Parameter.ToString());
+
+
+            if (!viewModelUpdated)
+            {
+                
+            }
+            else
+            {
+                //notificate done?
+            }
         }
     }
 }
