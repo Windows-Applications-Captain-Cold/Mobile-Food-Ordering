@@ -51,23 +51,21 @@ namespace Teamer.Pages
 
         }
 
-        private void Zoom(object sender, ManipulationDeltaRoutedEventArgs e)
-        {
-            var grid = sender as TextBlock;
-            var delta = e.Delta;
-            var scale = delta.Scale;
-            
-            if (grid.FontSize <= 20)
-            {
-                grid.FontSize += scale / 10;
-            }
 
-        }
 
         private void TextBlock_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             var grid = sender as TextBlock;
             grid.FontSize = 11;
+        }
+
+        private void Zoom(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            var grid = sender as TextBlock;
+            var scale = e.Delta.Scale;
+            grid.FontSize *= scale;
+
+
         }
     }
 }

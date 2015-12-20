@@ -32,11 +32,7 @@ namespace Teamer.Pages
             var grid = sender as TextBlock;
             var delta = e.Delta;
             var scale = delta.Scale;
-            if (grid.FontSize <= 20)
-            {
-                grid.FontSize += scale / 10;
-            }
-
+                grid.FontSize *= scale;
         }
 
         private void TextBlock_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
