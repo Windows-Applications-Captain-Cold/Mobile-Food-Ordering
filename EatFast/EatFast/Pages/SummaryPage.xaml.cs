@@ -44,7 +44,14 @@ namespace Teamer.Pages
         {
             if (e.Velocities.Linear.X > 1)
             {
-                this.Frame.Navigate(typeof(AccountPage));
+                var userAccountViewModel = new UserAccountViewModel()
+                {
+                    Name = this.ViewModel.Name,
+                    Organisation = this.ViewModel.Organisation,
+                    Projects = this.ViewModel.Projects,
+                    Team = this.ViewModel.Team
+                };
+                this.Frame.Navigate(typeof(AccountPage), userAccountViewModel);
             }
         }
 

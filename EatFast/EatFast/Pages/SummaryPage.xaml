@@ -6,11 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:converters="using:Teamer.ViewModels.Converters"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    >
 
     <Grid Name="SummaryMainGrid" Style="{StaticResource mainGrid}"
-          ManipulationDelta="SummaryMainGrid_ManipulationDelta"
-          ManipulationMode="All">
+            ManipulationDelta="SummaryMainGrid_ManipulationDelta"
+            ManipulationMode="All">
         <Grid.Resources>
             <converters:TaskDoneFillConverter x:Key="TaskDoneFillConverter"/>
             <DataTemplate x:Name="UserTasksTemplate">
@@ -25,22 +26,22 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="{Binding Name}"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Stretch"
-                               Grid.Column="1"/>
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Stretch"
+                            Grid.Column="1"/>
 
                     <Ellipse Grid.Column="0"
-                             Height="10"
-                             Width="10"
-                             Fill="Green" 
-                             VerticalAlignment="Center" />
+                            Height="10"
+                            Width="10"
+                            Fill="Green" 
+                            VerticalAlignment="Center" />
 
                     <TextBlock VerticalAlignment="Center"
-                               Grid.Row="1"
-                               Grid.Column="1"
-                               FontSize="10"
-                               Text="{Binding DueDate}"
-                               Margin="20 0 0 0" />
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="10"
+                            Text="{Binding DueDate}"
+                            Margin="20 0 0 0" />
                 </Grid>
             </DataTemplate>
         </Grid.Resources>
@@ -52,7 +53,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Button Name="Organisation_Button"
                 Content="{Binding Organisation}"
@@ -72,22 +73,21 @@
                 Style="{StaticResource Cool}"/>
 
         <ListView Grid.Row="2"
-                  Grid.ColumnSpan="4"
+                Grid.ColumnSpan="3"
                 ItemsSource="{Binding Projects}"
                 ItemTemplate="{StaticResource UserTasksTemplate}" />
-
     </Grid>
     <Page.BottomAppBar>
         <AppBar>
             <StackPanel Orientation="Horizontal">
                 <AppBarButton Label="Back" 
-                                      Icon="Back" 
-                                      Click="GoBack"/>
+                        Icon="Back" 
+                        Click="GoBack"/>
                 <Button Content="My Account"
-                                HorizontalContentAlignment="Left"
-                                Width="150" 
-                                Height="40"
-                                Click="GotoMyAccount"/>
+                        HorizontalContentAlignment="Left"
+                        Width="150" 
+                        Height="40"
+                        Click="GotoMyAccount"/>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>
