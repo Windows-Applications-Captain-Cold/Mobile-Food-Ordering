@@ -33,7 +33,7 @@ namespace Teamer.Pages
 
         }
 
-        private void GoToCurrentTask(object sender, DoubleTappedRoutedEventArgs e)
+        private void Grid_Holding(object sender, HoldingRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CurrentTask));
 

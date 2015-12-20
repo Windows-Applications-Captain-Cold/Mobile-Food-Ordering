@@ -26,5 +26,20 @@ namespace Teamer.Pages
         {
             this.InitializeComponent();
         }
+
+        private void Zoom(object sender, ManipulationDeltaRoutedEventArgs e)
+        {
+            var grid = sender as TextBlock;
+            var delta = e.Delta;
+            var scale = delta.Scale;
+            grid.FontSize += scale;
+
+        }
+
+        private void TextBlock_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            var grid = sender as TextBlock;
+            grid.FontSize = 11;
+        }
     }
 }

@@ -10,7 +10,7 @@
         <DataTemplate x:Name="tacskTemplate">
             <Grid  BorderBrush="Gray" 
                    BorderThickness="2"
-                   DoubleTapped="GoToCurrentTask">
+                  Holding="Grid_Holding">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*"/>
                     <ColumnDefinition Width="3 *"/>

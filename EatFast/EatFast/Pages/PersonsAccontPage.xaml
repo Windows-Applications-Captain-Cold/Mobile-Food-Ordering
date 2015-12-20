@@ -9,7 +9,7 @@
 
     <Page.Resources>
         <DataTemplate x:Name="tacskTemplate">
-            <Grid  DoubleTapped="GoToCurrentTask"
+            <Grid  Holding="Grid_Holding"
                 BorderBrush="Gray"
                 BorderThickness="2">
                 <Grid.ColumnDefinitions>

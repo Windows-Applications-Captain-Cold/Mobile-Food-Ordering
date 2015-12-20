@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-   
-    <Grid Style="{StaticResource mainGrid}">
+
+    <Grid   Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
@@ -23,7 +23,7 @@
                    Grid.Row="0"
                    Grid.Column="1"
                    FontSize="36"/>
-        
+
         <StackPanel Grid.Row="1"
                     Grid.Column="1"
                     VerticalAlignment="Center" >
@@ -34,7 +34,8 @@
         </StackPanel>
         <Grid Grid.Row="2"
               Grid.Column="1"
-              Grid.RowSpan="2">
+              Grid.RowSpan="2"
+           >
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="20"/>

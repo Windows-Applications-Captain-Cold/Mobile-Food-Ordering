@@ -74,9 +74,12 @@
                    Grid.Row="4"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
-                   FontSize="17"
+                   FontSize="11"
                    Foreground="Black"
                    TextWrapping="WrapWholeWords"
+                   ManipulationMode="All"
+                   ManipulationDelta="Zoom"
+                   DoubleTapped="TextBlock_DoubleTapped"
                    Text="Windows Application            
                      Main perposes of the project are to be completely buil mobile application for Windows 10.
                    The project should contains separated server , database and UI.The code must be KPK.
