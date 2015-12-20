@@ -9,9 +9,9 @@
 
     <Grid Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Name="Organisation"
                    Text="Telerik"
@@ -20,11 +20,14 @@
                 Content="Develop next generation MMORPG game"
                 Click="MainProject_Click"
                 Grid.Row="1"/>
-        <ListBox Grid.Row="2">
-            <TextBlock Text="Team 1 Graphics"/>
-            <TextBlock Text="Team 2 Sound"/>
-            <TextBlock Text="Team 3 Server"/>
-            <TextBlock Text="Team 4 Functionality"/>
+        <ListBox 
+            Background="Azure"
+            Grid.Row="2"
+            Margin="0 50 0 0">
+            <TextBlock Foreground="Black" Text="Team 1 Graphics"/>
+            <TextBlock Foreground="Black" Text="Team 2 Sound"/>
+            <TextBlock Foreground="Black" Text="Team 3 Server"/>
+            <TextBlock Foreground="Black" Text="Team 4 Functionality"/>
         </ListBox>
     </Grid>
 </Page>

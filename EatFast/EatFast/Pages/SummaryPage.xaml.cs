@@ -44,12 +44,15 @@ namespace Teamer.Pages
 
         private void SummaryMainGrid_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
         {
-
+            
         }
 
         private void SummaryMainGrid_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
-
+            if (e.Velocities.Linear.X > 1)
+            {
+                this.Frame.Navigate(typeof(AccountPage));
+            }
         }
 
         private void SummaryMainGrid_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)

@@ -16,13 +16,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Teamer.Pages
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class AccountPage : Page
     {
         public AccountPage()
@@ -44,7 +39,6 @@ namespace Teamer.Pages
         private void Grid_Holding(object sender, HoldingRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CurrentTask));
-
         }
 
         private void TakePicture(object sender, RoutedEventArgs e)
