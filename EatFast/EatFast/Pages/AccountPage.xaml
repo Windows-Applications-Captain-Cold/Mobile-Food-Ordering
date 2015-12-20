@@ -14,8 +14,8 @@
                    BorderThickness="2"
                   Holding="Grid_Holding">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition  Width="176"/>
+                    <ColumnDefinition  Width="200"/>
                 </Grid.ColumnDefinitions>
 
                 <!--Binding-->
@@ -34,7 +34,11 @@
                              FontSize="13"
                              Foreground="White"
                              />-->
-                <ComboBox   Grid.Column="2" >
+                <ComboBox   
+                          Width="117"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Left"
+                          Grid.Column="2" >
                     <ComboBoxItem >Done</ComboBoxItem>
                     <ComboBoxItem >In Pogres</ComboBoxItem>
                 </ComboBox>
@@ -75,7 +79,7 @@
                    Grid.ColumnSpan="2"
                    Height="23"
                    Background="Green">
-        <TextBlock    
+            <TextBlock    
                    HorizontalAlignment="Left"
                    Text="{Binding Organisation}"
                    Visibility="{x:Bind Converter={StaticResource OrganisationDataConverter}}"
@@ -124,5 +128,9 @@
                   ItemsSource="{Binding Projects}">
         </ListView>
     </Grid>
-
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

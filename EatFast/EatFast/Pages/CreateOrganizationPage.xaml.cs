@@ -38,5 +38,12 @@ namespace Teamer.Pages
             this.Frame.Navigate(typeof(AccountPage));
 
         }
+        public void GoBack(object sender, RoutedEventArgs args)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+        }
     }
 }

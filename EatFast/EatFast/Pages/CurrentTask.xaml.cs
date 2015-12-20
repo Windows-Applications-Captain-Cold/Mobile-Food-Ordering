@@ -40,5 +40,12 @@ namespace Teamer.Pages
             var grid = sender as TextBlock;
             grid.FontSize = 11;
         }
+        public void GoBack(object sender, RoutedEventArgs args)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+        }
     }
 }

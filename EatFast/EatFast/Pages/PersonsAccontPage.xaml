@@ -13,8 +13,8 @@
                 BorderBrush="Gray"
                 BorderThickness="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10*"/>
-                    <ColumnDefinition Width="3 *"/>
+                    <ColumnDefinition Width="176"/>
+                    <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
 
                 <!--Binding-->
@@ -23,7 +23,10 @@
                             Grid.Column="0"
                             Text="asdasdasdd"/>
 
-                <ComboBox   Grid.Column="2" >
+                <ComboBox  Width="117"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Left"
+                           Grid.Column="2" >
                     <ComboBoxItem >Done</ComboBoxItem>
                     <ComboBoxItem >In Pogres</ComboBoxItem>
                 </ComboBox>
@@ -93,5 +96,9 @@
             </Grid>
         </ListView>
     </Grid>
-
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

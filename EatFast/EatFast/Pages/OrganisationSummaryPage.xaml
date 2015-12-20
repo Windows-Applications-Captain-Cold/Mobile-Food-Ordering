@@ -19,15 +19,22 @@
         <Button Name="MainProject" 
                 Content="Develop next generation MMORPG game"
                 Click="MainProject_Click"
-                Grid.Row="1"/>
-        <ListBox 
-            Background="Azure"
-            Grid.Row="2"
-            Margin="0 50 0 0">
-            <TextBlock Foreground="Black" Text="Team 1 Graphics"/>
-            <TextBlock Foreground="Black" Text="Team 2 Sound"/>
-            <TextBlock Foreground="Black" Text="Team 3 Server"/>
-            <TextBlock Foreground="Black" Text="Team 4 Functionality"/>
-        </ListBox>
+                Style="{StaticResource Cool}"
+                Grid.Row="1"
+                Width="Auto"/>
+
+        <ListView Grid.Row="2"
+                  Foreground="Azure"
+                  Margin="0 50 0 0">
+            <TextBlock Foreground="Azure" Text="Team 1 Graphics"/>
+            <TextBlock Foreground="Azure" Text="Team 2 Sound"/>
+            <TextBlock Foreground="Azure" Text="Team 3 Server"/>
+            <TextBlock Foreground="Azure" Text="Team 4 Functionality"/>
+        </ListView>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar>
+            <AppBarButton Label="Back" Icon="Back" Click="GoBack"/>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>

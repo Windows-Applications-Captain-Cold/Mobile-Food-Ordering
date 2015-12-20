@@ -7,6 +7,7 @@ using Teamer.ViewModels;
 using Windows.Foundation;
 using Windows.Graphics.Display;
 using Windows.UI.ViewManagement;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
@@ -68,6 +69,14 @@ namespace Teamer.Pages
         private void Organisation_Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(OrganisationSummaryPage));
+        }
+
+        public void GoBack(object sender, RoutedEventArgs args)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
         }
     }
 }

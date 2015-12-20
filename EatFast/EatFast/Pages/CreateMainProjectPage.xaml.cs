@@ -31,5 +31,12 @@ namespace Teamer.Pages
         {
             this.Frame.Navigate(typeof(MainTaskPage));
         }
+        public void GoBack(object sender, RoutedEventArgs args)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
+        }
     }
 }
