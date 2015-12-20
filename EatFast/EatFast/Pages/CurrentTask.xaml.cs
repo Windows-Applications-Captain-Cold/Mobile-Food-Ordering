@@ -32,7 +32,10 @@ namespace Teamer.Pages
             var grid = sender as TextBlock;
             var delta = e.Delta;
             var scale = delta.Scale;
-            grid.FontSize += scale;
+            if (grid.FontSize <= 20)
+            {
+                grid.FontSize += scale / 10;
+            }
 
         }
 

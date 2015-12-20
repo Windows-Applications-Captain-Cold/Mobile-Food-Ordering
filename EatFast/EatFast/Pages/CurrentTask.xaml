@@ -67,7 +67,7 @@
             Grid.ColumnSpan="2">
             <TextBlock 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
-            Width="330"
+            Width="300"
             Height="400"
             Foreground="Black"
             FontSize="14"

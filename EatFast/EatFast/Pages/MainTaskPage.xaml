@@ -12,7 +12,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.7*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="7*"/>
             <RowDefinition Height="32"/>
             <RowDefinition Height="0.8*"/>
@@ -61,31 +61,34 @@
                 Click="GoToTaskPage"
                 Style="{StaticResource Cool}"/>
         
-        <TextBlock Grid.Row="4"
+        <TextBlock Grid.Row="3"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Text="Main Project"
                    FontSize="40"/>
-        <TextBlock Width="280"
-                   Margin="0,100,0,0"
-                   Height="auto"
-                   Grid.Row="4"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="2"
-                   FontSize="11"
-                   Foreground="Black"
-                   TextWrapping="WrapWholeWords"
-                   ScrollViewer.VerticalScrollBarVisibility="Auto"
-                   ManipulationMode="All"
-                   ManipulationDelta="Zoom"
-                   DoubleTapped="TextBlock_DoubleTapped"
-                   Text="Windows Application            
-                     Main perposes of the project are to be completely buil mobile application for Windows 10.
-                   The project should contains separated server , database and UI.The code must be KPK.
-                   asdaefgfdfg dfg er sd ksdkfmwe werkfmsdfm wknfs"/>
-
+        <ScrollViewer 
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            Grid.Row="4" 
+            Grid.ColumnSpan="2">
+            <TextBlock 
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            Width="300"
+            Height="400"
+            Foreground="Black"
+            FontSize="14"
+            ManipulationMode="All"
+            ManipulationDelta="Zoom"
+            DoubleTapped="TextBlock_DoubleTapped"
+            Text="Lorem Ipsum is simply dummy text of the printing 
+ and typesetting industry. Lorem Ipsum has been the 
+ industry's standard dummy text ever since the 1500s,
+ release of Letraset sheets containing Lorem Ipsum passages,
+ and more recently with desktop publishing software like Aldus 
+ PageMaker including versions of Lorem Ipsum."
+            TextWrapping="WrapWholeWords"/>
+        </ScrollViewer>
         <TextBox
             Grid.Row="5"
             PlaceholderText="Project Password" 
