@@ -2,6 +2,7 @@
 {
     using Managers;
     using System;
+    using System.Linq;
     using System.Threading.Tasks;
     using Windows.Media.Capture;
     using Windows.UI.Xaml.Media.Imaging;
@@ -33,9 +34,20 @@
             return true;
         }
 
-        internal async Task<bool> UpdateProjectStatus(string projectName, bool status)
+        internal async Task<bool> UpdateProjectStatus(string projectName)
         {
-            return await this.projectManager.ToggleStatus(projectName, status);
+            var status = await this.projectManager.ToggleStatus(projectName);
+            var project = this.Projects.Where(p => p.Name == projectName)
+                .FirstOrDefault();
+
+
+            this.Projects.Where(p => p.Name == project.Name)
+                .FirstOrDefault()
+                .Done = status;
+
+            RaisePropertyChanged("Projects");
+            RaisePropertyChanged("Done");
+            return status;
         }
     }
 }

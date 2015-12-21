@@ -6,7 +6,7 @@
     using Windows.Web.Http.Filters;
     public class ProjectManager
     {
-        private const string BaseAddress = "http://127.0.0.1:3000/";
+        private const string BaseAddress = "http://eatfast.herokuapp.com/";
         private const string ProjectDetailsEndPoint = "api/projects/";
         private const string ProjectStatusUpdateEndPoint = "api/projects/toggle/";
         private HttpClient httpClient;
@@ -38,10 +38,10 @@
             }
         }
 
-        public async Task<bool> ToggleStatus(string name, bool status)
+        public async Task<bool> ToggleStatus(string name)
         {
-            var result = await this.Update(name, new HttpStringContent(status.ToString()));
-            if (string.IsNullOrEmpty(result))
+            var result = await this.Update(name, new HttpStringContent(""));
+            if (!string.IsNullOrEmpty(result))
             {
                 return true;
             }

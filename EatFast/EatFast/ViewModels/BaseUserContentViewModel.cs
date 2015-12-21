@@ -7,7 +7,7 @@ using Teamer.Models;
 
 namespace Teamer.ViewModels
 {
-    public class BaseUserContentViewModel
+    public class BaseUserContentViewModel : ViewModelBase
     {
         public string Name { get; set; }
 

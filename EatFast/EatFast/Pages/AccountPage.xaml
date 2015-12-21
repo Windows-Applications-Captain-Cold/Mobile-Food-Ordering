@@ -9,8 +9,8 @@
     xmlns:converters="using:Teamer.ViewModels.Converters">
     <Page.Resources>
         <converters:OrganisationNameConverter x:Key="OrganisationDataConverter"/>
-        
-        <DataTemplate x:Name="tacskTemplate">
+        <converters:TaskDoneFillConverter x:Key="TaskDoneFillConverter" />
+        <!--<DataTemplate x:Name="tacskTemplate">
             <Grid  BorderBrush="Gray" 
                    BorderThickness="2"
                   Holding="Grid_Holding">
@@ -19,12 +19,12 @@
                     <ColumnDefinition  Width="200"/>
                 </Grid.ColumnDefinitions>
 
-                <!--Binding-->
+                
                 <TextBlock TextWrapping="WrapWholeWords" 
                             Width="250"
                             Grid.Column="0"
                             Text="{Binding Name}"/>
-                <!--<RadioButton Grid.Column="1"
+                <RadioButton Grid.Column="1"
                              Content="Done" 
                              Background="Green"
                              FontSize="13"
@@ -34,7 +34,7 @@
                              Background="Red"
                              FontSize="13"
                              Foreground="White"
-                             />-->
+                             
                 <ComboBox Name="ProjectStatusComboBox"
                         Width="117"
                         VerticalAlignment="Center"
@@ -45,7 +45,38 @@
                     <ComboBoxItem >In Progress</ComboBoxItem>
                 </ComboBox>
             </Grid>
+        </DataTemplate>
+        -->
+        <DataTemplate x:Name="UserTasksTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
+                <TextBlock Text="{Binding Name, Mode=OneWay}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Stretch"
+                            Grid.Column="1"/>
+
+                <Ellipse Grid.Column="0"
+                            Height="10"
+                            Width="10"
+                            Fill="{Binding Done, Mode=OneWay, Converter={StaticResource TaskDoneFillConverter}, ConverterParameter={Binding Done}}" 
+                            VerticalAlignment="Center" 
+                            Tapped="Ellipse_Tapped"/>
+
+                <TextBlock VerticalAlignment="Center"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="10"
+                            Text="{Binding DueDate, Mode=OneWay}"
+                            Margin="20 0 0 0" />
+            </Grid>
         </DataTemplate>
     </Page.Resources>
 
@@ -68,14 +99,14 @@
         <TextBlock Grid.Row="0"
                    Grid.Column="1"
                    VerticalAlignment="Top"
-                   Text="{Binding Email}"
+                   Text="{Binding Email, Mode=OneWay}"
                    FontSize="14"/>
         <TextBlock Grid.Row="0"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
-                   Text="{Binding Name}"/>
+                   Text="{Binding Name, Mode=OneWay}"/>
         <Grid Grid.Row="1"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
@@ -83,7 +114,7 @@
                    Background="Green">
             <TextBlock    
                    HorizontalAlignment="Left"
-                   Text="{Binding Organisation}"
+                   Text="{Binding Organisation, Mode=OneWay}"
                    Visibility="{x:Bind Converter={StaticResource OrganisationDataConverter}}"
                    FontSize="19"/>
         </Grid>
@@ -126,8 +157,8 @@
                   Grid.ColumnSpan="3"
                   HorizontalAlignment="Stretch"
                   ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                  ItemTemplate="{StaticResource tacskTemplate}"
-                  ItemsSource="{Binding Projects}">
+                  ItemTemplate="{StaticResource UserTasksTemplate}"
+                  ItemsSource="{Binding Projects, Mode=OneWay}">
         </ListView>
     </Grid>
     <Page.BottomAppBar>

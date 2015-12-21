@@ -7,13 +7,15 @@
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Input;
     using Windows.UI.Xaml.Navigation;
-
+    using Windows.UI.Xaml.Shapes;
     public sealed partial class AccountPage : Page
     {
         private const string ProjectUpdateSussessToastTitle = "Teamer: Success";
         private const string ProjectUpdateSuccessToastContent = "Project status successfully updated!";
         private const string ProjectUpdateFailToastTitle = "Teamer: Fail";
         private const string ProjectUpdateFailToastContent = "Project status not updated!";
+        private const string ServerErrorTitle = "Teamer: Fail";
+        private const string ServerErrorContent = "Server unreachable.";
 
         public AccountPage()
         {
@@ -76,19 +78,19 @@
             this.Frame.Navigate(typeof(AccountPage));
         }
 
-        private async  void ProjectStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void Ellipse_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            var comboBox = (sender as ComboBox);
-            var grid = comboBox.Parent as Grid;
+            var ellipse = (sender as Ellipse);
+            var grid = ellipse.Parent as Grid;
             var textBlock = grid.Children
                 .Where(c => c.GetType() == typeof(TextBlock))
                 .FirstOrDefault()
                 as TextBlock;
 
-            var status = (comboBox.SelectedItem as ComboBoxItem).Content;
-            var projectStatus = status.ToString() == "Done";
             var projectName = textBlock.Text;
-            var updated = await this.ViewModel.UpdateProjectStatus(projectName, projectStatus);
+            bool updated = false;
+            updated = await this.ViewModel.UpdateProjectStatus(projectName);
+            this.Notifier.Notify(ServerErrorTitle, ServerErrorContent);
             if (updated)
             {
                 this.Notifier.Notify(ProjectUpdateSussessToastTitle, ProjectUpdateSuccessToastContent);

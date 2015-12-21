@@ -10,7 +10,7 @@ namespace Teamer.Managers
 {
     public class OrganisationManager
     {
-        private const string BaseAddress = "http://127.0.0.1:3000/";
+        private const string BaseAddress = "http://eatfast.herokuapp.com/";
         private const string OrganisationDetailsEndPoint = "api/organisations/";
         private HttpClient httpClient;
 
