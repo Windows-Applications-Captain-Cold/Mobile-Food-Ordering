@@ -52,7 +52,7 @@ namespace Teamer.Pages
 
         private void MainProject_Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainTaskPage));
+            this.Frame.Navigate(typeof(MainTaskPage), this.ViewModel.MainProject);
         }
 
         private void Organisation_Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)

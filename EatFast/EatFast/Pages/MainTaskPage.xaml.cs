@@ -1,5 +1,7 @@
 ﻿namespace Teamer.Pages
 {
+    using Managers;
+    using Notifications;
     using Teamer.ViewModels;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
@@ -8,10 +10,14 @@
 
     public sealed partial class MainTaskPage : Page
     {
+        private string ProjectDetailsErrorTitle = "Teamer: Project Details";
+        private string ProjectDetailsErrorText = "Could not load project details. Check your internet connection.";
+
         public MainTaskPage()
         {
             this.InitializeComponent();
             this.ViewModel = new ProjectViewModel();
+            this.ProjectManager = new ProjectManager();
         }
 
         private ProjectViewModel ViewModel
@@ -20,15 +26,23 @@
             set { this.DataContext = value; }
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private ProjectManager ProjectManager { get; set; }
+        private INotifier Notifier { get; set; }
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
+            var projectName = e.Parameter.ToString();
+            var viewModelUpdated = await this.ViewModel.GetDetailsAsync(projectName);
+            if (!viewModelUpdated)
+            {
+                this.Notifier.Notify(ProjectDetailsErrorTitle, ProjectDetailsErrorText);
+            }
+            var a = this.innerDataContext.DataContext;
         }
 
         private void GoToMemberPage(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MembersPage));
-
         }
 
         private void GoToTaskPage(object sender, RoutedEventArgs e)

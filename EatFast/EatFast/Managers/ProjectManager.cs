@@ -7,7 +7,8 @@
     public class ProjectManager
     {
         private const string BaseAddress = "http://127.0.0.1:3000/";
-        private const string ProjectDetailsEndPoint = "api/organisations/";
+        private const string ProjectDetailsEndPoint = "api/projects/";
+        private const string ProjectStatusUpdateEndPoint = "api/projects/toggle/";
         private HttpClient httpClient;
 
         public ProjectManager()
@@ -26,6 +27,36 @@
                     BaseAddress +
                     ProjectDetailsEndPoint +
                     projectName));
+
+            if (result.StatusCode == HttpStatusCode.Ok)
+            {
+                return result.Content.ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<bool> ToggleStatus(string name, bool status)
+        {
+            var result = await this.Update(name, new HttpStringContent(status.ToString()));
+            if (string.IsNullOrEmpty(result))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public async Task<string> Update(string name, IHttpContent content)
+        {
+            var result = await this.httpClient.PutAsync(
+                new Uri(
+                    BaseAddress + ProjectStatusUpdateEndPoint + name),
+                content);
 
             if (result.StatusCode == HttpStatusCode.Ok)
             {

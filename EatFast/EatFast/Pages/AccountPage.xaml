@@ -9,6 +9,7 @@
     xmlns:converters="using:Teamer.ViewModels.Converters">
     <Page.Resources>
         <converters:OrganisationNameConverter x:Key="OrganisationDataConverter"/>
+        
         <DataTemplate x:Name="tacskTemplate">
             <Grid  BorderBrush="Gray" 
                    BorderThickness="2"
@@ -19,10 +20,10 @@
                 </Grid.ColumnDefinitions>
 
                 <!--Binding-->
-                <TextBlock  TextWrapping="WrapWholeWords" 
+                <TextBlock TextWrapping="WrapWholeWords" 
                             Width="250"
                             Grid.Column="0"
-                            Text="asdasdasdd"/>
+                            Text="{Binding Name}"/>
                 <!--<RadioButton Grid.Column="1"
                              Content="Done" 
                              Background="Green"
@@ -34,13 +35,14 @@
                              FontSize="13"
                              Foreground="White"
                              />-->
-                <ComboBox   
-                          Width="117"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Left"
-                          Grid.Column="2" >
+                <ComboBox Name="ProjectStatusComboBox"
+                        Width="117"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Grid.Column="2"
+                        SelectionChanged="ProjectStatus_SelectionChanged">
                     <ComboBoxItem >Done</ComboBoxItem>
-                    <ComboBoxItem >In Pogres</ComboBoxItem>
+                    <ComboBoxItem >In Progress</ComboBoxItem>
                 </ComboBox>
             </Grid>
 
@@ -116,7 +118,7 @@
                    VerticalAlignment="Bottom"
                    FontWeight="Thin"
                    FontSize="30"
-                   Text="My Tasks"/>
+                   Text="User tasks:"/>
 
         <ListView Grid.Row="3"
                   Grid.Column="0"

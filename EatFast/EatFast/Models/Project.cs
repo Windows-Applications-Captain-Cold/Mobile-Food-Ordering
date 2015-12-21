@@ -13,5 +13,9 @@ namespace Teamer.Models
         public string Description { get; set; }
 
         public DateTime DueDate { get; set; }
+
+        public string Organisation { get; set; }
+
+        public bool Done { get; set; }
     }
 }

@@ -13,7 +13,7 @@
             ManipulationDelta="SummaryMainGrid_ManipulationDelta"
             ManipulationMode="All">
         <Grid.Resources>
-            <converters:TaskDoneFillConverter x:Key="TaskDoneFillConverter"/>
+            <converters:TaskDoneFillConverter x:Key="TaskDoneFillConverter" />
             <DataTemplate x:Name="UserTasksTemplate">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -33,7 +33,7 @@
                     <Ellipse Grid.Column="0"
                             Height="10"
                             Width="10"
-                            Fill="Green" 
+                            Fill="{Binding Done, Converter={StaticResource TaskDoneFillConverter}, ConverterParameter={Binding Done}}" 
                             VerticalAlignment="Center" />
 
                     <TextBlock VerticalAlignment="Center"
