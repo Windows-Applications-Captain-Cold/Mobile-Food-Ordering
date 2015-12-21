@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Teamer.ViewModels;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-
-namespace Teamer.Pages
+﻿namespace Teamer.Pages
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    using Teamer.ViewModels;
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+    using Windows.UI.Xaml.Input;
+    using Windows.UI.Xaml.Navigation;
+
     public sealed partial class MainTaskPage : Page
     {
         public MainTaskPage()
         {
             this.InitializeComponent();
-            this.DataContext = new ProjectViewModel("Telerik Organization", "Mobile Application", "Create mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platforme mobile application for windows devise using windows universal platform");
+            this.ViewModel = new ProjectViewModel();
+        }
+
+        private ProjectViewModel ViewModel
+        {
+            get { return this.DataContext as ProjectViewModel; }
+            set { this.DataContext = value; }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
         }
 
         private void GoToMemberPage(object sender, RoutedEventArgs e)
@@ -53,8 +49,6 @@ namespace Teamer.Pages
 
         }
 
-
-
         private void TextBlock_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             var grid = sender as TextBlock;
@@ -66,8 +60,6 @@ namespace Teamer.Pages
             var grid = sender as TextBlock;
             var scale = e.Delta.Scale;
             grid.FontSize *= scale;
-
-
         }
 
         private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)

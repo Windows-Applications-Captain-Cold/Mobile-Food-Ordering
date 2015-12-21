@@ -35,7 +35,7 @@ namespace Teamer.Pages
 
         private void Grid_Holding(object sender, HoldingRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CurrentTask));
+            this.Frame.Navigate(typeof(CurrentProject));
 
         }
 

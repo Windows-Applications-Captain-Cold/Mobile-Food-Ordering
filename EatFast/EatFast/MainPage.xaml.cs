@@ -1,29 +1,24 @@
-﻿using Teamer.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Teamer.Pages;
-using System.Threading.Tasks;
-
-namespace Teamer
+﻿namespace Teamer
 {
+    using Teamer.ViewModels;
+    using System;
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+    using Teamer.Pages;
+    using Teamer.Notifications;
+
     public sealed partial class MainPage : Page
     {
+        private const string AuthenticationErrorTitle = "Teamer: Unsuccessfull authentication!";
+        private const string AuthenticationErrorText = "Authentication denied. Wrong email or password, or user already exists.";
+        private const string AuthenticationSuccessfullTitle = "Teamer: Authentication Successfull!";
+        private const string AuthenticationSuccessfullMessage = "You are now logged in!";
+
         public MainPage()
         {
             this.InitializeComponent();
             this.ViewModel = new UserAuthenticateViewModel();
+            this.Notifier = new Notifier();
         }
 
         private async void AuthenticateUser(object sender, RoutedEventArgs args)
@@ -33,16 +28,33 @@ namespace Teamer
             var buttonSender = sender as Button;
             if (buttonSender.Name == "loginButton")
             {
-                //TODO: Catch exception when server is unreachable
                 var userSummaryViewModel = await this.ViewModel.Login(email, password);
-                this.Frame.Navigate(typeof(SummaryPage), userSummaryViewModel);
+                if (userSummaryViewModel == null)
+                {
+                    this.Notifier.Notify(AuthenticationErrorTitle, AuthenticationErrorText);
+                }
+                else
+                {
+                    this.Notifier.Notify(AuthenticationSuccessfullTitle, AuthenticationSuccessfullMessage);
+                    this.Frame.Navigate(typeof(SummaryPage), userSummaryViewModel);
+                }
             }
             else
             {
                 var userSummaryViewModel = await this.ViewModel.Register(email, password);
-                this.Frame.Navigate(typeof(CreateProjectPage), userSummaryViewModel);
+                if (userSummaryViewModel == null)
+                {
+                    this.Notifier.Notify(AuthenticationErrorTitle, AuthenticationErrorText);
+                }
+                else
+                {
+                    this.Notifier.Notify(AuthenticationSuccessfullTitle, AuthenticationSuccessfullMessage);
+                    this.Frame.Navigate(typeof(SummaryPage), userSummaryViewModel);
+                }
             }
         }
+
+        private INotifier Notifier { get; set; }
 
         public UserAuthenticateViewModel ViewModel
         {

@@ -68,7 +68,7 @@
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
-                   Text="{Binding ProjectName}"
+                   Text="{Binding Name}"
                    FontSize="25"
                    TextWrapping="WrapWholeWords"/>
         <ScrollViewer 
@@ -85,7 +85,7 @@
             ManipulationMode="All"
             ManipulationDelta="Zoom"
             DoubleTapped="TextBlock_DoubleTapped"
-            Text="{Binding ProjectDescription}"
+            Text="{Binding Description}"
             TextWrapping="WrapWholeWords"/>
         </ScrollViewer>
         <TextBox

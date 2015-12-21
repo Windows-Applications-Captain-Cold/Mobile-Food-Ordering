@@ -6,12 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid Style="{StaticResource mainGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Name="Organisation"
                    Text="{Binding Name, Mode=OneWay}"
@@ -22,25 +22,30 @@
                 Style="{StaticResource Cool}"
                 Grid.Row="1"
                 Width="Auto"/>
-
-        <ListView Grid.Row="2"
-                  Foreground="Azure"
-                  Margin="0 50 0 0"
-                  ItemsSource="{Binding Path=Teams, Mode=OneWay}">
+        
+        <ProgressRing Grid.Row="2"
+                      Name="OrganisationProgressRing"
+                      IsActive="False"/>
+        
+        <ListView Grid.Row="3"
+                Foreground="Azure"
+                Margin="0 50 0 0"
+                ItemsSource="{Binding Path=Teams, Mode=OneWay}">
             <TextBlock Text="{Binding Path=Name, Mode=OneWay}" />
         </ListView>
+        
     </Grid>
     <Page.BottomAppBar>
         <AppBar>
             <StackPanel Orientation="Horizontal">
                 <AppBarButton Label="Back" 
-                                      Icon="Back" 
-                                      Click="GoBack"/>
+                        Icon="Back" 
+                        Click="GoBack"/>
                 <Button Content="My Account"
-                                HorizontalContentAlignment="Left"
-                                Width="150" 
-                                Height="40"
-                                Click="GotoMyAccount"/>
+                        HorizontalContentAlignment="Left"
+                        Width="150" 
+                        Height="40"
+                        Click="GotoMyAccount"/>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>
